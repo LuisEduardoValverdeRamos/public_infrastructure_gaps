@@ -61,7 +61,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 st.markdown(
-    '<div class="info-card">Modelo entrenado con datos de <strong>Infobras (MEF Perú)</strong> '
+    '<div class="info-card">Modelo entrenado con datos de <strong>Infobras (Contraloría General del Perú)</strong> '
     '— Gobiernos Locales 2018–2024. Los campos marcados con ★ son los de mayor impacto '
     'según el análisis SHAP.</div>',
     unsafe_allow_html=True,
@@ -350,7 +350,7 @@ if predict_btn:
 st.markdown("---")
 st.markdown(
     "**GFP — Implementation Gaps in Public Infrastructure** · "
-    "Datos: [Infobras, MEF Perú](https://www.infobras.gob.pe/) · "
+    "Datos: [Infobras, Contraloría General del Perú](https://www.infobras.gob.pe/) ·"
     "[Repositorio](https://github.com/LuisEduardoValverdeRamos/public_infrastructure_gaps)",
     unsafe_allow_html=False,
 )

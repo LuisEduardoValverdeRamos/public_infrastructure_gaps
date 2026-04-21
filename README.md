@@ -2,8 +2,11 @@
 
 Machine learning pipeline to predict whether public infrastructure projects (*obras*) in Peru will have a delay between their programmed and real completion date (**implementation gap / brecha de implementación**), and interpret the drivers of that gap through logistic regression and average marginal effects.
 
-**Data source:** [Infobras](https://www.infobras.gob.pe/) — Ministry of Economy and Finance (MEF), Peru.  
+**Data source:** [Infobras](https://www.infobras.gob.pe/) — Contraloría General del Perú.  
 **Universe:** Gobiernos Locales (Local Governments), 2018–2024.
+
+🔍 **[Live demo — Predictor de Brechas](https://publicinfrastructuregaps-tmw6bbr3errm5rwsqdxa75.streamlit.app/)**  
+🌐 **[Project site (GitHub Pages)](https://luiseduardovalverderamos.github.io/public_infrastructure_gaps/)**
 
 ---
 
