@@ -1,0 +1,40 @@
+# =============================================================================
+# GFP — .gitignore
+# =============================================================================
+
+# ── Datos (nunca al repo) ─────────────────────────────────────────────────────
+data/raw/
+data/processed/
+data.xlsx
+*.xlsx
+!data/dictionaries/*.xlsx
+
+# ── Modelos entrenados (archivos grandes) ─────────────────────────────────────
+outputs/models/
+
+# ── Archivos de versiones anteriores ─────────────────────────────────────────
+archive/
+1_A_Limpieza_Contrata.ipynb
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.ipynb_checkpoints/
+*.egg-info/
+.env
+.venv/
+
+# ── R ─────────────────────────────────────────────────────────────────────────
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+# ── Sistema ───────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Logs (se regeneran al correr) ─────────────────────────────────────────────
+outputs/regresiones/analysis_log_*.txt

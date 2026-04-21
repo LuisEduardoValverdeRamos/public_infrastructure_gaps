@@ -1,0 +1,749 @@
+variable,label,tipo,n_unicos,valores,bloque,tipo_agregacion,nota_agregacion,usar
+idmunici,Código Único de la Municipalidad,character,1874,,,,,SI
+ccdd,Código del Departamento,character,25,,,,,SI
+ccpp,Código de la Provincia,character,20,,,,,SI
+ccdi,Código del Distrito,character,43,,,,,SI
+Departamento,Nombre del Departamento,character,25,,,,,SI
+Provincia,Nombre de la Provincia,character,198,,,,,SI
+Distrito,Nombre del Distrito,character,1732,,,,,SI
+catmuni,Categoría de la Municipalidad,haven_labelled,2,Provincial = 1; Distrital = 2; Centro Poblado = 3,,,,SI
+year,Año de la encuesta,numeric,5,,,,,SI
+direc_muni,¿Municipalidad informó?,haven_labelled,2,No informó = 0; Informó = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+nomalcalde,Nombres y apellidos del alcalde,character,3995,,,,,SI
+sexo,Alcalde de la municipalidad / sexo,haven_labelled,2,Hombre = 1; Mujer = 2,,,,SI
+facebook,Facebook de la municipalidad,haven_labelled,2,No = 0; Sí = 1,,,,SI
+web,Página web de la municipalidad,haven_labelled,2,No = 0; Sí = 1,,,,SI
+propie_muni,¿Municipalidad Informó?,haven_labelled,1,No = 0; Sí = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+locales_propios,Número de locales / Propios,numeric,83,,,,,SI
+locales_alquilados,Número de locales / Alquilados,numeric,24,,,,,SI
+locales_cedidos,Número de locales / Cedidos,numeric,33,,,,,SI
+maqpes_muni,¿Municipalidad Informó?,haven_labelled,2,No = 0; Sí = 1,maquinaria_pesada,ninguna,"Variable de control de información, excluir del análisis",NO
+maqpes_muni_1a,Número de bienes / Excavadora / Operativos,numeric,6,,maquinaria_pesada,sumar_operativas,Sumar todas las operativas,SI
+maqpes_muni_1b,Número de bienes / Excavadora / No operativos,numeric,4,,maquinaria_pesada,sumar_no_operativas,Sumar todas las no operativas,SI
+maqpes_muni_2a,Número de bienes / Retroexcavadora / Operativos,numeric,9,,maquinaria_pesada,sumar_operativas,Sumar todas las operativas,SI
+maqpes_muni_2b,Número de bienes / Retroexcavadora / No operativos,numeric,5,,maquinaria_pesada,sumar_no_operativas,Sumar todas las no operativas,SI
+maqpes_muni_3a,Número de bienes / Motoniveladora / Operativos,numeric,11,,maquinaria_pesada,sumar_operativas,Sumar todas las operativas,SI
+maqpes_muni_3b,Número de bienes / Motoniveladora / No operativos,numeric,6,,maquinaria_pesada,sumar_no_operativas,Sumar todas las no operativas,SI
+maqpes_muni_4a,Número de bienes / Cargador frontal / Operativos,numeric,14,,maquinaria_pesada,sumar_operativas,Sumar todas las operativas,SI
+maqpes_muni_4b,Número de bienes / Cargador frontal / No operativos,numeric,7,,maquinaria_pesada,sumar_no_operativas,Sumar todas las no operativas,SI
+maqpes_muni_5a,Número de bienes / Tractor oruga / Operativos,numeric,12,,maquinaria_pesada,sumar_operativas,Sumar todas las operativas,SI
+maqpes_muni_5b,Número de bienes / Tractor oruga / No operativos,numeric,10,,maquinaria_pesada,sumar_no_operativas,Sumar todas las no operativas,SI
+maqpes_muni_6a,Número de bienes / Tractor agrícola / Operativos,numeric,19,,maquinaria_pesada,sumar_operativas,Sumar todas las operativas,SI
+maqpes_muni_6b,Número de bienes / Tractor agrícola / No operativos,numeric,13,,maquinaria_pesada,sumar_no_operativas,Sumar todas las no operativas,SI
+maqpes_muni_8a,Número de bienes / Compactadora de suelo / Operativos,numeric,24,,maquinaria_pesada,sumar_operativas,Sumar todas las operativas,SI
+maqpes_muni_8b,Número de bienes / Compactadora de suelo / No operativos,numeric,13,,maquinaria_pesada,sumar_no_operativas,Sumar todas las no operativas,SI
+maqpes_muni_9a,Número de bienes / Otra maquinaria pesada / Operativos,numeric,13,,maquinaria_pesada,sumar_operativas,Sumar todas las operativas,SI
+maqpes_muni_9b,Número de bienes / Otra maquinaria pesada / No operativos,numeric,7,,maquinaria_pesada,sumar_no_operativas,Sumar todas las no operativas,SI
+muepeq_muni,¿Municipalidad Informó?,haven_labelled,2,No = 0; Sí = 1,maquinaria_menor,ninguna,"Variable de control de información, excluir del análisis",NO
+muepeq_muni_1a,Número de bienes / Auto y/o camioneta / Operativos,numeric,100,,maquinaria_menor,sumar_operativas,Sumar todas las operativas,SI
+muepeq_muni_1b,Número de bienes / Auto y/o camioneta / No operativos,numeric,40,,maquinaria_menor,sumar_no_operativas,Sumar todas las no operativas,SI
+muepeq_muni_4a,Número de bienes / Volquete / Operativos,numeric,24,,maquinaria_menor,sumar_operativas,Sumar todas las operativas,SI
+muepeq_muni_4b,Número de bienes / Volquete / No operativos,numeric,14,,maquinaria_menor,sumar_no_operativas,Sumar todas las no operativas,SI
+muepeq_muni_5a,Número de bienes / Camión recolector de basura / Operativos,numeric,32,,maquinaria_menor,sumar_operativas,Sumar todas las operativas,SI
+muepeq_muni_5b,Número de bienes / Camión recolector de basura / No operativos,numeric,21,,maquinaria_menor,sumar_no_operativas,Sumar todas las no operativas,SI
+muepeq_muni_6a,Número de bienes / Camión cisterna / Operativos,numeric,15,,maquinaria_menor,sumar_operativas,Sumar todas las operativas,SI
+muepeq_muni_6b,Número de bienes / Camión cisterna / No operativos,numeric,11,,maquinaria_menor,sumar_no_operativas,Sumar todas las no operativas,SI
+muepeq_muni_7a,Número de bienes / Camión / Operativos,numeric,32,,maquinaria_menor,sumar_operativas,Sumar todas las operativas,SI
+muepeq_muni_7b,Número de bienes / Camión / No operativos,numeric,19,,maquinaria_menor,sumar_no_operativas,Sumar todas las no operativas,SI
+muepeq_muni_3a,Número de bienes / Ambulancia / Operativos,numeric,9,,maquinaria_menor,sumar_operativas,Sumar todas las operativas,SI
+muepeq_muni_3b,Número de bienes / Ambulancia / No operativos,numeric,5,,maquinaria_menor,sumar_no_operativas,Sumar todas las no operativas,SI
+muepeq_muni_2a,Número de bienes / Motocicleta / Operativos,numeric,111,,maquinaria_menor,sumar_operativas,Sumar todas las operativas,SI
+muepeq_muni_2b,Número de bienes / Motocicleta / No operativos,numeric,62,,maquinaria_menor,sumar_no_operativas,Sumar todas las no operativas,SI
+muepeq_muni_8a,Número de bienes / Bote y/o lancha / Operativos,numeric,11,,maquinaria_menor,sumar_operativas,Sumar todas las operativas,SI
+muepeq_muni_8b,Número de bienes / Bote y/o lancha / No operativos,numeric,8,,maquinaria_menor,sumar_no_operativas,Sumar todas las no operativas,SI
+maqpes_muni_7a,Número de bienes / Rodillo liso vibratorio y/o neumático / Operativos,numeric,9,,maquinaria_pesada,sumar_operativas,Sumar todas las operativas,SI
+maqpes_muni_7b,Número de bienes / Rodillo liso vibratorio y/o neumático / No operativos,numeric,3,,maquinaria_pesada,sumar_no_operativas,Sumar todas las no operativas,SI
+muepeq_muni_9a,Número de bienes / Grupo electrógeno / Operativos,numeric,30,,maquinaria_menor,sumar_operativas,Sumar todas las operativas,SI
+muepeq_muni_9b,Número de bienes / Grupo electrógeno / No operativos,numeric,15,,maquinaria_menor,sumar_no_operativas,Sumar todas las no operativas,SI
+muepeq_muni_10a,Número de bienes / Panel solar / Operativos,numeric,28,,maquinaria_menor,sumar_operativas,Sumar todas las operativas,SI
+muepeq_muni_10b,Número de bienes / Panel solar / No operativos,numeric,15,,maquinaria_menor,sumar_no_operativas,Sumar todas las no operativas,SI
+muepeq_muni_11a,Número de bienes / Otro vehículo y/o equipo / Operativos,numeric,39,,maquinaria_menor,sumar_operativas,Sumar todas las operativas,SI
+muepeq_muni_11b,Número de bienes / Otro vehículo y/o equipo / No operativos,numeric,15,,maquinaria_menor,sumar_no_operativas,Sumar todas las no operativas,SI
+comu_muni,¿Municipalidad Informó?,haven_labelled,2,No = 0; Sí = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+comu_muni_2,Número de líneas fijas,numeric,63,,,,,SI
+comu_muni_4,"Número de líneas móviles (incluye RPC, RPM y otros)",numeric,155,,,,,SI
+compu_muni,¿Municipalidad Informó?,haven_labelled,2,No = 0; Sí = 1,tic_computadoras,ninguna,"Variable de control de información, excluir del análisis",NO
+compu_muni_1,"Número de computadoras operativas/ Pentium (I, II, III y IV)",numeric,77,,tic_computadoras,sumar,Sumar todas las computadoras,SI
+compu_muni_2,Número de computadoras operativas / Pentium D y/o Celeron,numeric,60,,tic_computadoras,sumar,Sumar todas las computadoras,SI
+compu_muni_3,Número de computadoras operativas / Core Duo y/o Core 2 Duo,numeric,152,,tic_computadoras,sumar,Sumar todas las computadoras,SI
+compu_muni_4,Número de computadoras operativas / Core 2 Quad,numeric,66,,tic_computadoras,sumar,Sumar todas las computadoras,SI
+compu_muni_5,Número de computadoras operativas / Core i3,numeric,138,,tic_computadoras,sumar,Sumar todas las computadoras,SI
+compu_muni_6,Número de computadoras operativas / Core i5,numeric,204,,tic_computadoras,sumar,Sumar todas las computadoras,SI
+compu_muni_7,Número de computadoras operativas / Core i7,numeric,173,,tic_computadoras,sumar,Sumar todas las computadoras,SI
+compu_muni_8,Número de computadoras operativas / (Advanced Micro Device),numeric,69,,tic_computadoras,sumar,Sumar todas las computadoras,SI
+compu_muni_9,Número de computadoras operativas / Otro,numeric,31,,tic_computadoras,sumar,Sumar todas las computadoras,SI
+impres_muni,¿Municipalidad Informó?,haven_labelled,2,No = 0; Sí = 1,tic_impresoras,ninguna,"Variable de control de información, excluir del análisis",NO
+impres_muni_2,Número de equipos operativos / Fotocopiadoras,numeric,56,,tic_impresoras,sumar,Sumar todas las impresoras/equipos,SI
+impres_muni_4,Número de equipos operativos / Escáner,numeric,49,,tic_impresoras,sumar,Sumar todas las impresoras/equipos,SI
+impres_muni_6,Número de equipos operativos / Impresora básica,numeric,168,,tic_impresoras,sumar,Sumar todas las impresoras/equipos,SI
+impres_muni_8,Número de equipos operativos / Impresora multifuncional,numeric,140,,tic_impresoras,sumar,Sumar todas las impresoras/equipos,SI
+impres_muni_10,Número de equipos operativos / Proyector multimedia,numeric,56,,tic_impresoras,sumar,Sumar todas las impresoras/equipos,SI
+impres_muni_12,Número de equipos operativos / Otro,numeric,19,,tic_impresoras,sumar,Sumar todas las impresoras/equipos,SI
+red_muni,¿Municipalidad Informó?,haven_labelled,1,No = 0; Sí = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+red_muni_2,Número de computadoras interconectadas a red informática local,numeric,282,,,,,SI
+inter_muni,¿Municipalidad Informó?,haven_labelled,2,No = 0; Sí = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+inter_muni_2,Número de computadoras con acceso a internet,numeric,412,,,,,SI
+inter_muni_3,Tipo de conexión a internet,haven_labelled,6,Si = 1; No = 2,,,,SI
+portal_muni,¿Municipalidad Informó?,haven_labelled,2,No = 0; Sí = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+portal_muni_1,¿La municipalidad tiene Portal de Transparencia Estándar?,haven_labelled,4," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+propie_muni_1,Número de predios de propiedad municipal,numeric,158,,,,,SI
+propie_muni_2,Número de predios cedidos temporalmente en uso por otras entidades,numeric,46,,,,,SI
+propie_muni_3,Número de predios de propiedad municipal inscritos en registros públicos,numeric,105,,,,,SI
+propie_muni_4,Número de predios de propiedad y/o cedidos registrados en el SINABIP de la SBN,numeric,56,,,,,SI
+propie_muni_5,Número de predios de propiedad y/o cedidos que están desocupados,numeric,18,,,,,SI
+propie_muni_6,Número de predios de propiedad y/o cedidos con procesos judiciales,numeric,14,,,,,SI
+admin_muni_prop,¿La municipalidad cuenta con locales propios?,haven_labelled,2,No = 0; Sí = 1,,,,SI
+admin_muni_alq,¿La municipalidad cuenta con locales alquilados?,haven_labelled,2,No = 0; Sí = 1,,,,SI
+admin_muni_ced,¿La municipalidad cuenta con locales cedidos?,haven_labelled,2,No = 0; Sí = 1,,,,SI
+muepeq_muni_12a,Número de bienes / Otro vehículo y/o equipo (2) / Operativos,numeric,3,,maquinaria_menor,sumar_operativas,Sumar todas las operativas,SI
+muepeq_muni_12b,Número de bienes / Otro vehículo y/o equipo (2) / No operativos,numeric,2,,maquinaria_menor,sumar_no_operativas,Sumar todas las no operativas,SI
+per_001,Municipalidad,haven_labelled,2,No = 0; Sí = 1,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_002,Total personal / Funcionarios y/o Directivos,numeric,111,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_003,Decreto Legislativo N° 276 / Nombrado / Funcionarios y Directivos / Mujer,numeric,31,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_004,Decreto Legislativo N° 276 / Nombrado / Funcionarios y/o Directivos / Hombre,numeric,49,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_005,Decreto Legislativo N° 276 / Contratado / Funcionarios y/o Directivos / Mujer,numeric,29,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_006,Decreto Legislativo N° 276 / Contratado / Funcionarios y/ o Directivos / Hombre,numeric,53,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_007,Decreto Legislativo N° 728 / Funcionarios y/o Directivos / Mujer,numeric,2,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_008,Decreto Legislativo N° 728 / Funcionarios y/ o Directivos / Hombre,numeric,1,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_009,Contrato Administrativo de Servicios (CAS) / Funcionarios y/o Directivos / Mujer,numeric,29,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_010,Contrato Administrativo de Servicios (CAS) / Funcionarios y/o Directivos / Hombr,numeric,49,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_087,Locación de Servicios / Funcionarios y/o Directivos / Mujer,numeric,28,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_088,Locación de Servicios / Funcionarios y/o Directivos / Hombre,numeric,43,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_011,Total personal / Empleados / Profesionales,numeric,227,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_012,Decreto Legislativo N° 276 / Nombrado / Empleados / Profesionales / Mujer,numeric,41,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_013,Decreto Legislativo N° 276 / Nombrado / Empleados / Profesionales / Hombre,numeric,38,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_014,Decreto Legislativo N° 276 / Contratado/ Empleados / Profesionales / Mujer,numeric,47,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_015,Decreto Legislativo N° 276 / Contratado/ Empleados / Profesionales / Hombre,numeric,82,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_016,Decreto Legislativo N° 728 / Empleados / Profesionales / Mujer,numeric,1,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_017,Decreto Legislativo N° 728 / Empleados / Profesionales / Hombre,numeric,2,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_018,Contrato Administrativo de Servicios (CAS) / Empleados / Profesionales / Mujer,numeric,93,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_019,Contrato Administrativo de Servicios(CAS)/ Empleados / Profesionales / Hombre,numeric,101,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_089,Locación de Servicios / Empleados / Profesionales / Mujer,numeric,65,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_090,Locación de Servicios / Empleados / Profesionales / Hombre,numeric,81,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_020,Total personal / Empleados / Técnicos,numeric,333,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_021,Decreto Legislativo N° 276 / Nombrado / Empleados / Técnicos / Mujer,numeric,65,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_022,Decreto Legislativo N° 276 / Nombrado / Empleados / Técnicos / Hombre,numeric,82,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_023,Decreto Legislativo N° 276/ Contratado / Empleados / Técnicos / Mujer,numeric,62,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_024,Decreto Legislativo N° 276 / Contratado / Empleados / Técnicos / Hombre,numeric,82,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_025,Decreto Legislativo N° 728/ Empleados / Técnicos / Mujer,numeric,2,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_026,Decreto Legislativo N° 728 / Empleados / Técnicos / Hombre,numeric,2,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_027,Contrato Administrativo de Servicios (CAS) / Empleados / Técnicos / Mujer,numeric,135,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_028,Contrato Administrativo de Servicios (CAS) / Empleados / Técnicos / Hombre,numeric,162,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_091,Locación de Servicios / Empleados / Técnicos / Mujer,numeric,91,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_092,Locación de Servicios / Empleados / Técnicos / Hombre,numeric,108,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_029,Total personal / Empleados / Auxiliares,numeric,335,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_030,Decreto Legislativo N° 276 / Nombrado / Empleados / Auxiliares / Mujer,numeric,48,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_031,Decreto Legislativo N° 276 / Nombrado / Empleados / Auxiliares / Hombre,numeric,70,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_032,Decreto Legislativo N° 276 / Contratado/ Empleados / Auxiliares / Mujer,numeric,62,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_033,Decreto Legislativo N° 276 / Contratado/ Empleados / Auxiliares / Hombre,numeric,75,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_034,Decreto Legislativo N° 728 / Empleados / Auxiliares / Mujer,numeric,4,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_035,Decreto Legislativo N° 728 / Empleados / Auxiliares / Hombre,numeric,4,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_036,Contrato Administrativo de Servicios (CAS) / Empleados / Auxiliares / Mujer,numeric,154,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_037,Contrato Administrativo de Servicios (CAS) / Empleados / Auxiliares / Hombre,numeric,191,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_093,Locación de Servicios / Empleados / Auxiliares / Mujer,numeric,78,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_094,Locación de Servicios / Empleados / Auxiliares / Hombre,numeric,110,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_038,Total personal / Obreros / De limpieza,numeric,259,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_039,Decreto Legislativo N° 276 / Nombrado / Obreros / De limpieza / Mujer,numeric,22,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_040,Decreto Legislativo N° 276 / Nombrado / Obreros / De limpieza / Hombre,numeric,32,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_041,Decreto Legislativo N° 276 / Contratado / Obreros / De limpieza / Mujer,numeric,22,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_042,Decreto Legislativo N° 276 / Contratado / Obreros / De limpieza / Hombre,numeric,27,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_043,Decreto Legislativo N° 728 / Obreros / De limpieza / Mujer,numeric,105,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_044,Decreto Legislativo N° 728 / Obreros / De limpieza / Hombre,numeric,145,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_045,Contrato Administrativo de Servicios (CAS) / Obreros / De limpieza / Mujer,numeric,92,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_046,Contrato Administrativo de Servicios (CAS) / Obreros / De limpieza / Hombre,numeric,97,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_095,Locación de Servicios / Obreros / De limpieza / Mujer,numeric,65,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_096,Locación de Servicios / Obreros / De limpieza / Hombre,numeric,65,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_047,Total personal / Obreros / Otros,numeric,377,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_048,Decreto Legislativo N° 276 / Nombrado / Obreros / Otros / Mujer,numeric,17,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_049,Decreto Legislativo N° 276 / Nombrado / Obreros / Otros / Hombre,numeric,37,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_050,Decreto Legislativo N° 276 / Contratado / Obreros / Otros / Mujer,numeric,16,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_051,Decreto Legislativo N° 276/ Contratado / Obreros / Otros / Hombre,numeric,37,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_052,Decreto Legislativo N° 728 / Obreros / Otros / Mujer,numeric,141,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_053,Decreto Legislativo N° 728 / Obreros / Otros / Hombre,numeric,261,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_054,Contrato Administrativo de Servicios (CAS) / Obreros / Otros / Mujer,numeric,73,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_055,Contrato Administrativo de Servicios (CAS) / Obreros / Otros / Hombre,numeric,114,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_097,Locación de Servicios / Obreros / Otros / Mujer,numeric,62,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_098,Locación de Servicios / Obreros / Otros / Hombre,numeric,116,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_056,Total personal / Personal de Vigilancia / Interna de los Locales Municipales,numeric,108,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_057,Decreto Legislativo N° 276 / Nombrado / Personal de Vigilancia / Interna de los,numeric,13,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_058,  Decreto Legislativo N° 276/ Nombrado/ Personal de Vigilancia / Interna de los,numeric,25,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_059,Decreto Legislativo N° 276 / Contratado/ Personal de Vigilancia / Interna de lo,numeric,13,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_060,Decreto Legislativo N° 276 / Contratado/ Personal de Vigilancia / Interna de lo,numeric,21,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_061,Decreto Legislativo N° 728 / Personal de Vigilancia / Interna de los Locales Mu,numeric,27,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_062,Decreto Legislativo N° 728 / Personal de Vigilancia / Interna de los Locales Mu,numeric,59,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_063,Contrato Administrativo de Servicios(CAS) / Personal de Vigilancia / Interna de,numeric,36,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_064,Contrato Administrativo de Servicios (CAS) / Personal de Vigilancia / Interna de,numeric,68,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_099,Locación de Servicios / Personal de Vigilancia / Efectivos de Serenazgo / Mujer,numeric,28,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_100,Locación de Servicios / Personal de Vigilancia / Efectivos de Serenazgo / Hombr,numeric,62,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_065,Total personal,numeric,790,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_066,Decreto Legislativo N° 276 / Nombrado / Mujer,numeric,113,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_067,Decreto Legislativo N° 276 / Nombrado / Hombre,numeric,151,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_068,Decreto Legislativo N° 276 / Contratado / Mujer,numeric,115,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_069,Decreto Legislativo N° 276 / Contratado / Hombre,numeric,168,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_070,Decreto Legislativo N° 728 / Mujer,numeric,189,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_071,Decreto Legislativo N° 728 / Hombre,numeric,312,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_072,Contrato Administrativo de Servicios (CAS) / Mujer,numeric,285,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_073,Contrato Administrativo de Servicios (CAS) / Hombre,numeric,351,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_085,Locación de Servicios / Mujer,numeric,223,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_086,Locación de Servicios / Hombre,numeric,291,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_074,,numeric,719,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_075,,numeric,103,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_076,,numeric,140,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_077,,numeric,106,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_078,,numeric,157,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_079,,numeric,173,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_080,,numeric,293,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_081,,numeric,265,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_082,,numeric,326,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_083,,numeric,205,,recursos_humanos,sumar,Sumar personal por categoría,SI
+per_084,,numeric,260,,recursos_humanos,sumar,Sumar personal por categoría,SI
+ing_01,ing_01,haven_labelled,1,No = 0; Sí = 1,finanzas_ingresos,sumar,,SI
+ing_02,,numeric,7489,,finanzas_ingresos,sumar,,SI
+ing_03,,numeric,7470,,finanzas_ingresos,sumar,,SI
+ing_04,,numeric,4997,,finanzas_ingresos,sumar,,SI
+ing_05,,numeric,4971,,finanzas_ingresos,sumar,,SI
+ing_06,,numeric,2685,,finanzas_ingresos,sumar,,SI
+ing_07,,numeric,612,,finanzas_ingresos,sumar,,SI
+ing_08,,numeric,95,,finanzas_ingresos,sumar,,SI
+ing_09,,numeric,138,,finanzas_ingresos,sumar,,SI
+ing_10,,numeric,995,,finanzas_ingresos,sumar,,SI
+ing_11,,numeric,567,,finanzas_ingresos,sumar,,SI
+ing_12,,numeric,1121,,finanzas_ingresos,sumar,,SI
+ing_13,,numeric,38,,finanzas_ingresos,sumar,,SI
+ing_14,,numeric,6648,,finanzas_ingresos,sumar,,SI
+ing_15,,numeric,4621,,finanzas_ingresos,sumar,,SI
+ing_16,,numeric,887,,finanzas_ingresos,sumar,,SI
+ing_17,,numeric,1771,,finanzas_ingresos,sumar,,SI
+ing_18,,numeric,3082,,finanzas_ingresos,sumar,,SI
+ing_19,,numeric,1319,,finanzas_ingresos,sumar,,SI
+ing_20,,numeric,2344,,finanzas_ingresos,sumar,,SI
+ing_21,,numeric,4044,,finanzas_ingresos,sumar,,SI
+ing_22,,numeric,3127,,finanzas_ingresos,sumar,,SI
+ing_23,,numeric,550,,finanzas_ingresos,sumar,,SI
+ing_24,,numeric,72,,finanzas_ingresos,sumar,,SI
+ing_25,,numeric,144,,finanzas_ingresos,sumar,,SI
+ing_26,,numeric,1677,,finanzas_ingresos,sumar,,SI
+ing_27,,numeric,700,,finanzas_ingresos,sumar,,SI
+ing_28,,numeric,1085,,finanzas_ingresos,sumar,,SI
+ing_29,,numeric,333,,finanzas_ingresos,sumar,,SI
+ing_30,,numeric,1159,,finanzas_ingresos,sumar,,SI
+ing_31,,numeric,3368,,finanzas_ingresos,sumar,,SI
+ing_32,,numeric,3502,,finanzas_ingresos,sumar,,SI
+ing_33,,numeric,2764,,finanzas_ingresos,sumar,,SI
+ing_34,,numeric,7411,,finanzas_ingresos,sumar,,SI
+ing_35,,numeric,5058,,finanzas_ingresos,sumar,,SI
+ing_36,,numeric,7284,,finanzas_ingresos,sumar,,SI
+ing_37,,numeric,3036,,finanzas_ingresos,sumar,,SI
+ing_38,,numeric,447,,finanzas_ingresos,sumar,,SI
+ing_39,,numeric,1936,,finanzas_ingresos,sumar,,SI
+ing_40,,numeric,324,,finanzas_ingresos,sumar,,SI
+ing_41,,numeric,160,,finanzas_ingresos,sumar,,SI
+ing_42,,numeric,7476,,finanzas_ingresos,sumar,,SI
+ing_43,,numeric,7119,,finanzas_ingresos,sumar,,SI
+ing_44,,numeric,431,,finanzas_ingresos,sumar,,SI
+ing_45,,numeric,324,,finanzas_ingresos,sumar,,SI
+ing_46,,numeric,6333,,finanzas_ingresos,sumar,,SI
+ing_47,,numeric,1983,,finanzas_ingresos,sumar,,SI
+ing_48,,numeric,4664,,finanzas_ingresos,sumar,,SI
+ing_49,,numeric,2165,,finanzas_ingresos,sumar,,SI
+ing_50,,numeric,255,,finanzas_ingresos,sumar,,SI
+ing_51,,numeric,6754,,finanzas_ingresos,sumar,,SI
+ing_52,,numeric,1625,,finanzas_ingresos,sumar,,SI
+ing_53,,numeric,6686,,finanzas_ingresos,sumar,,SI
+ing_54,,numeric,6409,,finanzas_ingresos,sumar,,SI
+ing_55,,numeric,4941,,finanzas_ingresos,sumar,,SI
+ing_56,,numeric,7414,,finanzas_ingresos,sumar,,SI
+ing_57,,numeric,2968,,finanzas_ingresos,sumar,,SI
+ing_58,,numeric,7367,,finanzas_ingresos,sumar,,SI
+gast_01,gast_01,haven_labelled,1,No = 0; Sí = 1,finanzas_gastos,sumar,,SI
+gast_02,,numeric,7488,,finanzas_gastos,sumar,,SI
+gast_03,,numeric,7487,,finanzas_gastos,sumar,,SI
+gast_04,,numeric,7342,,finanzas_gastos,sumar,,SI
+gast_05,,numeric,6340,,finanzas_gastos,sumar,,SI
+gast_06,,numeric,7488,,finanzas_gastos,sumar,,SI
+gast_07,,numeric,1802,,finanzas_gastos,sumar,,SI
+gast_08,,numeric,3914,,finanzas_gastos,sumar,,SI
+gast_09,,numeric,7488,,finanzas_gastos,sumar,,SI
+gast_10,,numeric,7488,,finanzas_gastos,sumar,,SI
+gast_11,,numeric,20,,finanzas_gastos,sumar,,SI
+gast_12,,numeric,5407,,finanzas_gastos,sumar,,SI
+gast_13,,numeric,7419,,finanzas_gastos,sumar,,SI
+gast_14,,numeric,3885,,finanzas_gastos,sumar,,SI
+gast_15,,numeric,1052,,finanzas_gastos,sumar,,SI
+gast_16,,numeric,2187,,finanzas_gastos,sumar,,SI
+gast_17,,numeric,5089,,finanzas_gastos,sumar,,SI
+gast_18,,numeric,2678,,finanzas_gastos,sumar,,SI
+gast_19,,numeric,1341,,finanzas_gastos,sumar,,SI
+gast_20,,numeric,6227,,finanzas_gastos,sumar,,SI
+gast_21,,numeric,1871,,finanzas_gastos,sumar,,SI
+gast_22,,numeric,2885,,finanzas_gastos,sumar,,SI
+gast_23,,numeric,3093,,finanzas_gastos,sumar,,SI
+gast_24,,numeric,911,,finanzas_gastos,sumar,,SI
+gast_25,,numeric,7345,,finanzas_gastos,sumar,,SI
+gast_26,,numeric,318,,finanzas_gastos,sumar,,SI
+gast_27,,numeric,88,,finanzas_gastos,sumar,,SI
+gast_28,,numeric,878,,finanzas_gastos,sumar,,SI
+mod_3,Instrumento de gestión y desarrollo que dispone/ Plan de Desarrollo Municipal C,haven_labelled,5,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_4,Instrumento de gestión y desarrollo que dispone/ Plan Estratégico Instituciona,haven_labelled,3,No informó = 0; Informó = 1,instrumentos_gestion,ninguna,,SI
+mod_5,Instrumento de gestión y desarrollo que dispone/ Plan Estratégico Instituciona,haven_labelled,5,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_6,Instrumento de gestión y desarrollo que dispone/ Plan de Desarrollo Económico,haven_labelled,3,No informó = 0; Informó = 1,instrumentos_gestion,ninguna,,SI
+mod_7,Instrumento de gestión y desarrollo que dispone/ Plan de Desarrollo Económico,haven_labelled,5,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_8,Instrumento de gestión y desarrollo que dispone/ Plan de Acondicionamiento Terr,haven_labelled,3,No informó = 0; Informó = 1,instrumentos_gestion,ninguna,,SI
+mod_9,Instrumento de gestión y desarrollo que dispone/ Plan de Acondicionamiento Terr,haven_labelled,5,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_10,Instrumento de gestión y desarrollo que dispone/ Plan de Desarrollo Urbano,haven_labelled,3,No informó = 0; Informó = 1,instrumentos_gestion,ninguna,,SI
+mod_11,Instrumento de gestión y desarrollo que dispone /Plan de Desarrollo Urbano / Mo,haven_labelled,5,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_12,Instrumento de gestión y desarrollo que dispone/ Esquema de Ordenamiento Urbano,haven_labelled,3,No informó = 0; Informó = 1,instrumentos_gestion,ninguna,,SI
+mod_13,Instrumento de gestión y desarrollo que dispone/ Esquema de Ordenamiento Urbano,haven_labelled,5,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_14,Instrumento de gestión y desarrollo que dispone/ Plan de Desarrollo Rural,haven_labelled,3,No informó = 0; Informó = 1,instrumentos_gestion,ninguna,,SI
+mod_15,Instrumento de gestión y desarrollo que dispone/ Plan de Desarrollo Rural / Mot,haven_labelled,5,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_16,Instrumento de gestión y desarrollo que dispone/ Plan de Desarrollo de Capacida,haven_labelled,3,No informó = 0; Informó = 1,instrumentos_gestion,ninguna,,SI
+mod_17,Instrumento de gestión y desarrollo que dispone/ Plan de Desarrollo de Capacida,haven_labelled,5,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_18,Instrumento de gestión y desarrollo que dispone/ Plan Local de Igualdad de Gén,haven_labelled,3,No informó = 0; Informó = 1,instrumentos_gestion,ninguna,,SI
+mod_19,Instrumento de gestión y desarrollo que dispone/ Plan Local de Igualdad de Gén,haven_labelled,5,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_20,Instrumento de gestión y desarrollo que dispone/ Reglamento de Organización y,haven_labelled,3,No informó = 0; Informó = 1,instrumentos_gestion,ninguna,,SI
+mod_21,Instrumento de gestión y desarrollo que dispone/ Reglamento de Organización y,haven_labelled,5,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_22,Instrumento de gestión y desarrollo que dispone/ Manual de Organización y Func,haven_labelled,3,No informó = 0; Informó = 1,instrumentos_gestion,ninguna,,SI
+mod_23,Instrumento de gestión y desarrollo que dispone Manual de Organización y Funci,haven_labelled,5,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_24,Instrumento de gestión y desarrollo que dispone/ Cuadro de Asignación de Perso,haven_labelled,3,No informó = 0; Informó = 1,instrumentos_gestion,ninguna,,SI
+mod_25,Instrumento de gestión y desarrollo que dispone/ Cuadro de Asignación de Perso,haven_labelled,5,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_26,Instrumento de gestión y desarrollo que dispone Manual de Procesos y Procedimie,haven_labelled,3,No informó = 0; Informó = 1,instrumentos_gestion,ninguna,,SI
+mod_27,Instrumento de gestión y desarrollo que dispone Manual de Procesos y Procedimie,haven_labelled,5,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_28,Instrumento de gestión y desarrollo que dispone/ Otro,haven_labelled,3,Si = 1; No = 2,instrumentos_gestion,ninguna,,SI
+mod_29,Municipalidad,haven_labelled,2,No = 0; Sí = 1,instrumentos_gestion,ninguna,,SI
+mod_30,¿En la municipalidad tiene constituido el Consejo de Coordinación Local (CCL)?,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",instrumentos_gestion,ninguna,,SI
+mod_31,Miembros del CCL / Concejo Municipal Provincial/ Distrital/ Total,numeric,28,,instrumentos_gestion,ninguna,,SI
+mod_32,Miembros del CCL / Concejo Municipal Provincial/ Distrital /Mujer,numeric,13,,instrumentos_gestion,ninguna,,SI
+mod_33,Miembros del CCL / Concejo Municipal Provincial / Distrital /Hombre,numeric,26,,instrumentos_gestion,ninguna,,SI
+mod_34,Miembros del CCL/ Alcaldes Distritales/ Total,numeric,31,,instrumentos_gestion,ninguna,,SI
+mod_35,Miembros del CCL/ Alcaldes Distritales /Mujer,numeric,11,,instrumentos_gestion,ninguna,,SI
+mod_36,Miembros del CCL/ Alcaldes Distritales / Hombre,numeric,33,,instrumentos_gestion,ninguna,,SI
+mod_37,Miembros del CCL/ Alcaldes de Centros Poblados / Total,numeric,27,,instrumentos_gestion,ninguna,,SI
+mod_38,Miembros del CCL/ Alcaldes de Centros Poblados / Mujer,numeric,11,,instrumentos_gestion,ninguna,,SI
+mod_39,Miembros del CCL/ Alcaldes de Centros Poblados / Hombre,numeric,27,,instrumentos_gestion,ninguna,,SI
+mod_40,Miembros del CCL/ Representante de la Sociedad Civil/ Total,numeric,24,,instrumentos_gestion,ninguna,,SI
+mod_41,Miembros del CCL/ Representante de la Sociedad Civil/ Mujer,numeric,15,,instrumentos_gestion,ninguna,,SI
+mod_42,Miembros del CCL/ Representante de la Sociedad Civil/ Hombre,numeric,20,,instrumentos_gestion,ninguna,,SI
+mod_43,Municipalidad,haven_labelled,2,No = 0; Sí = 1,instrumentos_gestion,ninguna,,SI
+mod_45,Actividades que ejecutó el Consejo de Coordinación Local / Realizó sesiones d,numeric,60,,instrumentos_gestion,ninguna,,SI
+mod_49,Municipalidad,haven_labelled,2,No = 0; Sí = 1,instrumentos_gestion,ninguna,,SI
+mod_50,¿La municipalidad tiene Texto Único de Procedimientos Administrativos (TUPA) s,haven_labelled,3,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_51,La municipalidad tiene Texto Único de Procedimientos Administrativos/ Número d,numeric,320,,instrumentos_gestion,ninguna,,SI
+mod_52,La municipalidad tiene Texto Único de Procedimientos Administrativos/ Número d,numeric,200,,instrumentos_gestion,ninguna,,SI
+mod_53,¿Ha sido ratificado el Texto Único de Procedimientos Administrativos (TUPA) po,haven_labelled,3,Si = 1; No = 2,instrumentos_gestion,ninguna,,SI
+mod_54,Municipalidad,haven_labelled,2,No informó = 0; Informó = 1,instrumentos_gestion,ninguna,,SI
+mod_55,"¿Dónde se publica el TUPA vigente? / Diario Oficial ""El Peruano""",numeric,2,,instrumentos_gestion,ninguna,,SI
+mod_56,¿Dónde se publica el TUPA vigente? / Diario Local,numeric,3,,instrumentos_gestion,ninguna,,SI
+mod_57,¿Dóndo se publica el TUPA vigente? / Pizarra y/o vitrina de la municipalidad,numeric,3,,instrumentos_gestion,ninguna,,SI
+mod_58,¿Dónde se publica el TUPA vigente? / Página Web de la municipalidad,numeric,3,,instrumentos_gestion,ninguna,,SI
+mod_59,¿Dónde se publica el TUPA vigente? / Otro,numeric,1,,instrumentos_gestion,ninguna,,SI
+mod_60,Municipalidad,haven_labelled,2,No informó = 0; Informó = 1,instrumentos_gestion,ninguna,,SI
+mod_61,¿La municipalidad realizó procedimiento administrativo de Licencia de funciona,haven_labelled,3,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_62,Procedimiento administrativo realizado por la Municipalidad / Licencia de funcio,numeric,467,,instrumentos_gestion,ninguna,,SI
+mod_63,Procedimiento administrativo realizado por la Municipalidad / Licencia de funcio,numeric,463,,instrumentos_gestion,ninguna,,SI
+mod_64,Procedimiento administrativo realizado por la Municipalidad / Licencia de funcio,numeric,108,,instrumentos_gestion,ninguna,,SI
+mod_65,Procedimiento administrativo realizado por la Municipalidad / Licencia de funcio,numeric,765,,instrumentos_gestion,ninguna,,SI
+mod_66,Procedimiento administrativo realizado por la Municipalidad / Licencia de funcio,numeric,19,,instrumentos_gestion,ninguna,,SI
+mod_67,Procedimiento administrativo realizado por la Municipalidad / Licencia de funcio,numeric,22,,instrumentos_gestion,ninguna,,SI
+mod_68,¿La municipalidad realizó procedimiento administrativo de Licencia de funciona,haven_labelled,3,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_69,Procedimiento administrativo realizado por la Municipalidad / Licencia de funcio,numeric,322,,instrumentos_gestion,ninguna,,SI
+mod_70,Procedimiento administrativo realizado por la Municipalidad / Licencia de funcio,numeric,304,,instrumentos_gestion,ninguna,,SI
+mod_71,Procedimiento administrativo realizado por la Municipalidad / Licencia de funcio,numeric,120,,instrumentos_gestion,ninguna,,SI
+mod_72,Procedimiento administrativo realizado por la Municipalidad / Licencia de funcio,numeric,737,,instrumentos_gestion,ninguna,,SI
+mod_73,Procedimiento administrativo realizado por la Municipalidad / Licencia de funcio,numeric,19,,instrumentos_gestion,ninguna,,SI
+mod_74,Procedimiento administrativo realizado por la Municipalidad / Licencia de funcio,numeric,22,,instrumentos_gestion,ninguna,,SI
+mod_75,¿La municipalidad realizó procedimiento administrativo de Licencia de funciona,haven_labelled,3,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_76,Procedimiento administrativo realizado por la Municipalidad / Licencia de funcio,numeric,159,,instrumentos_gestion,ninguna,,SI
+mod_77,Procedimiento administrativo realizado por la Municipalidad / Licencia de funcio,numeric,146,,instrumentos_gestion,ninguna,,SI
+mod_78,Procedimiento administrativo realizado por la Municipalidad / Licencia de funcio,numeric,54,,instrumentos_gestion,ninguna,,SI
+mod_79,Procedimiento administrativo realizado por la Municipalidad / Licencia de funcio,numeric,669,,instrumentos_gestion,ninguna,,SI
+mod_80,Procedimiento administrativo realizado por la Municipalidad / Licencia de funcio,numeric,19,,instrumentos_gestion,ninguna,,SI
+mod_81,Procedimiento administrativo realizado por la Municipalidad / Licencia de funcio,numeric,20,,instrumentos_gestion,ninguna,,SI
+mod_82,¿La municipalidad realizó procedimiento administrativo de Licencia de edificac,haven_labelled,3,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_83,Procedimiento administrativo realizado por la Municipalidad / Licencia de edific,numeric,213,,instrumentos_gestion,ninguna,,SI
+mod_84,Procedimiento administrativo realizado por la Municipalidad / Licencia de edific,numeric,195,,instrumentos_gestion,ninguna,,SI
+mod_85,Procedimiento administrativo realizado por la Municipalidad / Licencia de edific,numeric,94,,instrumentos_gestion,ninguna,,SI
+mod_86,Procedimiento administrativo realizado por la Municipalidad / Licencia de edific,numeric,502,,instrumentos_gestion,ninguna,,SI
+mod_87,Procedimiento administrativo realizado por la Municipalidad / Licencia de edific,numeric,22,,instrumentos_gestion,ninguna,,SI
+mod_88,Procedimiento administrativo realizado por la Municipalidad / Licencia de edific,numeric,23,,instrumentos_gestion,ninguna,,SI
+mod_89,¿La municipalidad realizó procedimiento administrativo de Autorización para i,haven_labelled,3,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_90,Procedimiento administrativo realizado por la Municipalidad /  Autorización par,numeric,209,,instrumentos_gestion,ninguna,,SI
+mod_91,Procedimiento administrativo realizado por la Municipalidad / Autorización para,numeric,215,,instrumentos_gestion,ninguna,,SI
+mod_92,Procedimiento administrativo realizado por la Municipalidad / Autorización para,numeric,54,,instrumentos_gestion,ninguna,,SI
+mod_93,Procedimiento administrativo realizado por la Municipalidad / Autorización para,numeric,274,,instrumentos_gestion,ninguna,,SI
+mod_94,Procedimiento administrativo realizado por la Municipalidad / Autorización para,numeric,16,,instrumentos_gestion,ninguna,,SI
+mod_95,Procedimiento administrativo realizado por la Municipalidad / Autorización para,numeric,16,,instrumentos_gestion,ninguna,,SI
+mod_96,¿La municipalidad realizó procedimiento administrativo de Copia certificada de,haven_labelled,3,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_97,Procedimiento administrativo realizado por la Municipalidad / Copia certificada,numeric,1435,,instrumentos_gestion,ninguna,,SI
+mod_98,Procedimiento administrativo realizado por la Municipalidad / Copia certificada,numeric,1438,,instrumentos_gestion,ninguna,,SI
+mod_99,Procedimiento administrativo realizado por la Municipalidad / Copia certificada,numeric,97,,instrumentos_gestion,ninguna,,SI
+mod_100,Procedimiento administrativo realizado por la Municipalidad / Copia certificada,numeric,197,,instrumentos_gestion,ninguna,,SI
+mod_101,Procedimiento administrativo realizado por la Municipalidad / Copia certificada,numeric,8,,instrumentos_gestion,ninguna,,SI
+mod_102,Procedimiento administrativo realizado por la Municipalidad / Copia certificada,numeric,17,,instrumentos_gestion,ninguna,,SI
+mod_103,¿La municipalidad realizó procedimiento administrativo de Copia certificada de,haven_labelled,3,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_104,Procedimiento administrativo realizado por la Municipalidad / Copia certificada,numeric,574,,instrumentos_gestion,ninguna,,SI
+mod_105,Procedimiento administrativo realizado por la Municipalidad / Copia certificada,numeric,574,,instrumentos_gestion,ninguna,,SI
+mod_106,Procedimiento administrativo realizado por la Municipalidad / Copia certificada,numeric,58,,instrumentos_gestion,ninguna,,SI
+mod_107,Procedimiento administrativo realizado por la Municipalidad / Copia certificada,numeric,204,,instrumentos_gestion,ninguna,,SI
+mod_108,Procedimiento administrativo realizado por la Municipalidad / Copia certificada,numeric,10,,instrumentos_gestion,ninguna,,SI
+mod_109,Procedimiento administrativo realizado por la Municipalidad / Copia certificada,numeric,14,,instrumentos_gestion,ninguna,,SI
+mod_110,¿La municipalidad realizó procedimiento administrativo de Copia certificada de,haven_labelled,3,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_111,Procedimiento administrativo realizado por la Municipalidad / Copia certificada,numeric,682,,instrumentos_gestion,ninguna,,SI
+mod_112,Procedimiento administrativo realizado por la Municipalidad / Copia certificada,numeric,679,,instrumentos_gestion,ninguna,,SI
+mod_113,Procedimiento administrativo realizado por la Municipalidad / Copia certificada,numeric,60,,instrumentos_gestion,ninguna,,SI
+mod_114,Procedimiento administrativo realizado por la Municipalidad / Copia certificada,numeric,213,,instrumentos_gestion,ninguna,,SI
+mod_115,Procedimiento administrativo realizado por la Municipalidad / Copia certificada,numeric,11,,instrumentos_gestion,ninguna,,SI
+mod_116,Procedimiento administrativo realizado por la Municipalidad / Copia certificada,numeric,19,,instrumentos_gestion,ninguna,,SI
+mod_117,¿La municipalidad realizó procedimiento administrativo de Acceso a la informac,haven_labelled,3,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_118,Procedimiento administrativo realizado por la Municipalidad / Acceso a la inform,numeric,512,,instrumentos_gestion,ninguna,,SI
+mod_119,Procedimiento administrativo realizado por la Municipalidad / Acceso a la inform,numeric,352,,instrumentos_gestion,ninguna,,SI
+mod_120,Procedimiento administrativo realizado por la Municipalidad / Acceso a la inform,numeric,103,,instrumentos_gestion,ninguna,,SI
+mod_121,Procedimiento administrativo realizado por la Municipalidad / Acceso a la inform,numeric,36,,instrumentos_gestion,ninguna,,SI
+mod_122,Municipalidad,haven_labelled,2,No informó = 0; Informó = 1,instrumentos_gestion,ninguna,,SI
+mod_123,Canales de atención al ciudadano / Línea de telefonía fija o móvil,numeric,3,,instrumentos_gestion,ninguna,,SI
+mod_124,Canales de atención al ciudadano / Correo electrónico,numeric,3,,instrumentos_gestion,ninguna,,SI
+mod_125,Canales de atención al ciudadano / Buzón de Sugerencias,numeric,3,,instrumentos_gestion,ninguna,,SI
+mod_126,Canales de atención al ciudadano / Libro de Reclamaciones,numeric,3,,instrumentos_gestion,ninguna,,SI
+mod_127,Canales de atención al ciudadano / Otro canal de atención,numeric,3,,instrumentos_gestion,ninguna,,SI
+mod_128,Municipalidad,haven_labelled,2,No informó = 0; Informó = 1,instrumentos_gestion,ninguna,,SI
+mod_129,Modalidades de pago / En ventanilla de la municipalidad con efectivo,numeric,2,,instrumentos_gestion,ninguna,,SI
+mod_130,Modalidades de pago / En ventanilla de la municipalidad con tarjeta de crédito,numeric,3,,instrumentos_gestion,ninguna,,SI
+mod_131,Modalidades de pago / Página Web de la municipalidad (Pago en línea),numeric,3,,instrumentos_gestion,ninguna,,SI
+mod_132,Modalidades de pago / Otra modalidad de pago,numeric,3,,instrumentos_gestion,ninguna,,SI
+mod_133,Municipalidad,haven_labelled,2,No informó = 0; Informó = 1,instrumentos_gestion,ninguna,,SI
+mod_134,La Municipalidad tiene personal exclusivo del área de administracion tributaria,haven_labelled,3,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_135,Personal exclusivo del área al 31 de diciembre 2015 / Total,numeric,133,,instrumentos_gestion,ninguna,,SI
+mod_136,Personal exclusivo del área al 31 de diciembre 2015 / Mujer,numeric,85,,instrumentos_gestion,ninguna,,SI
+mod_137,Personal exclusivo del área al 31 de diciembre 2015 / Hombre,numeric,83,,instrumentos_gestion,ninguna,,SI
+mod_138,Personal exclusivo del área al 30 de junio 2016 / Total,numeric,135,,instrumentos_gestion,ninguna,,SI
+mod_139,Personal exclusivo del área al 30 de junio 2016 / Mujer,numeric,83,,instrumentos_gestion,ninguna,,SI
+mod_140,Personal exclusivo del área al 30 de junio 2016 / Hombre,numeric,85,,instrumentos_gestion,ninguna,,SI
+mod_141,Municipalidad,haven_labelled,2,No informó = 0; Informó = 1,instrumentos_gestion,ninguna,,SI
+mod_142,Número de licencias de funcionamiento para establecimientos / SERVICIOS / Resta,numeric,232,,instrumentos_gestion,ninguna,,SI
+mod_143,Número de licencias de funcionamiento para establecimientos / SERVICIOS / Agenc,numeric,55,,instrumentos_gestion,ninguna,,SI
+mod_144,Número de licencias de funcionamiento para establecimientos / SERVICIOS / Peluq,numeric,116,,instrumentos_gestion,ninguna,,SI
+mod_145,Número de licencias de funcionamiento para establecimientos / SERVICIOS / Entid,numeric,44,,instrumentos_gestion,ninguna,,SI
+mod_146,Número de licencias de funcionamiento para establecimientos / SERVICIOS / Artes,numeric,27,,instrumentos_gestion,ninguna,,SI
+mod_147,Número de licencias de funcionamiento para establecimientos / SERVICIOS / Disco,numeric,33,,instrumentos_gestion,ninguna,,SI
+mod_148,Número de licencias de funcionamiento para establecimientos / SERVICIOS / Activ,numeric,109,,instrumentos_gestion,ninguna,,SI
+mod_149,Número de licencias de funcionamiento para establecimientos / SERVICIOS / Empre,numeric,34,,instrumentos_gestion,ninguna,,SI
+mod_150,Número de licencias de funcionamiento para establecimientos / SERVICIOS / Cabin,numeric,68,,instrumentos_gestion,ninguna,,SI
+mod_151,Número de licencias de funcionamiento para establecimientos / SERVICIOS / Juego,numeric,28,,instrumentos_gestion,ninguna,,SI
+mod_152,Número de licencias de funcionamiento para establecimientos / SERVICIOS / Otro,numeric,117,,instrumentos_gestion,ninguna,,SI
+mod_153,Número de licencias de funcionamiento para establecimientos / ARTESANÍA Y MANU,numeric,39,,instrumentos_gestion,ninguna,,SI
+mod_154,Número de licencias de funcionamiento para establecimientos / ARTESANÍA Y MANU,numeric,43,,instrumentos_gestion,ninguna,,SI
+mod_155,Número de licencias de funcionamiento para establecimientos / COMERCIO / Bodega,numeric,209,,instrumentos_gestion,ninguna,,SI
+mod_156,Número de licencias de funcionamiento para establecimientos / COMERCIO / Farmac,numeric,83,,instrumentos_gestion,ninguna,,SI
+mod_157,Número de licencias de funcionamiento para establecimientos / COMERCIO / Ferret,numeric,69,,instrumentos_gestion,ninguna,,SI
+mod_158,Número de licencias de funcionamiento para establecimientos / COMERCIO / Venta,numeric,104,,instrumentos_gestion,ninguna,,SI
+mod_159,Número de licencias de funcionamiento para establecimientos / COMERCIO / Venta,numeric,59,,instrumentos_gestion,ninguna,,SI
+mod_160,Número de licencias de funcionamiento para establecimientos / COMERCIO / Mercad,numeric,16,,instrumentos_gestion,ninguna,,SI
+mod_161,Número de licencias de funcionamiento para establecimientos / COMERCIO / Centro,numeric,32,,instrumentos_gestion,ninguna,,SI
+mod_162,Número de licencias de funcionamiento para establecimientos / COMERCIO / Otro,numeric,96,,instrumentos_gestion,ninguna,,SI
+mod_163,Municipalidad,haven_labelled,2,No informó = 0; Informó = 1,instrumentos_gestion,ninguna,,SI
+mod_164,Número de licencias de habilitación urbana / Vivienda,numeric,113,,instrumentos_gestion,ninguna,,SI
+mod_165,Número de licencias de habilitación urbana / Comercio,numeric,38,,instrumentos_gestion,ninguna,,SI
+mod_166,Número de licencias de habilitación urbana / Servicio,numeric,17,,instrumentos_gestion,ninguna,,SI
+mod_167,Número de licencias de habilitación urbana / Industria,numeric,14,,instrumentos_gestion,ninguna,,SI
+mod_168,Número de licencias de habilitación urbana / Otro,numeric,5,,instrumentos_gestion,ninguna,,SI
+mod_169,Municipalidad,haven_labelled,2,No informó = 0; Informó = 1,instrumentos_gestion,ninguna,,SI
+mod_170,Número de licencias de edificación / Viviendas unifamiliares,numeric,326,,instrumentos_gestion,ninguna,,SI
+mod_171,Número de licencias de edificación / Viviendas multifamiliares,numeric,157,,instrumentos_gestion,ninguna,,SI
+mod_172,Número de licencias de edificación / Edificaciones de uso mixto con vivienda,numeric,71,,instrumentos_gestion,ninguna,,SI
+mod_173,Número de licencias de edificación / Restaurantes,numeric,34,,instrumentos_gestion,ninguna,,SI
+mod_174,Número de licencias de edificación / Centros comerciales o galerías comercial,numeric,49,,instrumentos_gestion,ninguna,,SI
+mod_175,Número de licencias de edificación / Campos feriales,numeric,9,,instrumentos_gestion,ninguna,,SI
+mod_176,"Número de licencias de edificación / Hoteles, hostales y otros establecimiento",numeric,29,,instrumentos_gestion,ninguna,,SI
+mod_177,Número de licencias de edificación / Fábricas industriales,numeric,23,,instrumentos_gestion,ninguna,,SI
+mod_178,Número de licencias de edificación / Locales de instituciones del Estado,numeric,14,,instrumentos_gestion,ninguna,,SI
+mod_179,Número de licencias de edificación / Terminales de transporte terrestre,numeric,7,,instrumentos_gestion,ninguna,,SI
+mod_180,Número de licencias de edificación / Otro,numeric,58,,instrumentos_gestion,ninguna,,SI
+mod_181,Municipalidad,haven_labelled,2,No informó = 0; Informó = 1,instrumentos_gestion,ninguna,,SI
+mod_182,¿La municipalidad realizó verificaciones técnicas a las obras con licencia de,haven_labelled,3,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_183,Número de verificaciones técnicas a las obras con licencia de edificación  /,numeric,349,,instrumentos_gestion,ninguna,,SI
+mod_184,Número de verificaciones técnicas a las obras con licencia de edificación  /,numeric,273,,instrumentos_gestion,ninguna,,SI
+mod_185,Número de verificaciones técnicas a las obras con licencia de edificación / T,numeric,321,,instrumentos_gestion,ninguna,,SI
+mod_186,Municipalidad,haven_labelled,2,No informó = 0; Informó = 1,instrumentos_gestion,ninguna,,SI
+mod_187,¿La municipalidad dispone de terrenos propios para fines de vivienda que no est,haven_labelled,3,Falta aprobar por el Concejo Municipal = 1; En elaboración = 2; Falta de recursos para su elaboración = 3; Otro = 4,instrumentos_gestion,ninguna,,SI
+mod_188,"Terrenos propios para fines de vivienda que no están ocupados, construidos o af",numeric,81,,instrumentos_gestion,ninguna,,SI
+mod_189,"Terrenos propios para fines de vivienda que no están ocupados, construidos o af",numeric,268,,instrumentos_gestion,ninguna,,SI
+mod_190,"Terrenos propios para fines de vivienda que no están ocupados, construidos o af",numeric,53,,instrumentos_gestion,ninguna,,SI
+mod_191,"Terrenos propios para fines de vivienda que no están ocupados, construidos o af",numeric,60,,instrumentos_gestion,ninguna,,SI
+mod_192,"Terrenos propios para fines de vivienda que no están ocupados, construidos o af",numeric,257,,instrumentos_gestion,ninguna,,SI
+mod_1,Municipalidad,haven_labelled,2,No = 0; Sí = 1,instrumentos_gestion,ninguna,,SI
+mod_2,RECODE of mod_2 (Instrumento de gestión y desarrollo que dispone/ Plan de Desarr,haven_labelled,2,No = 0; Sí = 1,instrumentos_gestion,ninguna,,SI
+mod_44,RECODE of mod_44 (Actividades que ejecutó el Consejo de Coordinación Local/ Real,haven_labelled,2,No = 0; Sí = 1,instrumentos_gestion,ninguna,,SI
+mod_46,RECODE of mod_46 (Actividades que ejecutó el Consejo de Coordinación Local/ Part,haven_labelled,2,No = 0; Sí = 1,instrumentos_gestion,ninguna,,SI
+mod_47,RECODE of mod_47 (Actividades que ejecutó el Consejo de Coordinación Local / Par,haven_labelled,2,No = 0; Sí = 1,instrumentos_gestion,ninguna,,SI
+mod_48,RECODE of mod_48 (Actividades que ejecutó el Consejo de Coordinación Local / Otr,haven_labelled,2,No = 0; Sí = 1,instrumentos_gestion,ninguna,,SI
+limpgast_2,Gasto ejecutado en el servicio de limpieza pública (en soles) / Gasto total,numeric,4531,,servicios_limpieza,sumar,,SI
+limpgast_3,Gasto ejecutado en el servicio de limpieza pública (en soles) / Recojo domicili,numeric,3738,,servicios_limpieza,sumar,,SI
+limpgast_4,Gasto ejecutado en el servicio de limpieza pública (en soles) / Barridos de cal,numeric,2824,,servicios_limpieza,sumar,,SI
+limpgast_5,Gasto ejecutado en el servicio de limpieza pública (en soles) / Otro,numeric,405,,servicios_limpieza,sumar,,SI
+regamb_2,Número de vendedores ambulantes registrados en la Municipalidad / Total,numeric,397,,,,,SI
+bibliocomps_19,Total Computadoras operativas,numeric,40,,,,,SI
+infradep_5,Número de infraestructura deportiva y/o recreativa / Complejos deportivos,numeric,30,,,,,SI
+orgs_3,Comité del Programa del Vaso de Leche / Número,numeric,280,,programas_sociales,sumar,,SI
+orgs_4,Comité del Programa del Vaso de Leche / Total de beneficiarios al 31 de diciemb,numeric,2404,,programas_sociales,sumar,,SI
+orgs_7,Comedor Popular / Número,numeric,151,,programas_sociales,sumar,,SI
+orgs_8,Comedor Popular / Total de beneficiarios al 31 de diciembre 2015,numeric,1108,,programas_sociales,sumar,,SI
+orgs_9,Comedor Popular / Total de beneficiarios al 30 de junio 2016,numeric,834,,programas_sociales,sumar,,SI
+orgs_11,Club de madres / Número,numeric,115,,programas_sociales,sumar,,SI
+orgs_12,Club de madres / Total de beneficiarios al 31 de diciembre 2015,numeric,585,,programas_sociales,sumar,,SI
+orgs_13,Club de madres / Total de beneficiarios al 30 de junio 2016,numeric,449,,programas_sociales,sumar,,SI
+orgs_15,Organizaciones sociales / Organizaciones juveniles / Número,numeric,36,,programas_sociales,sumar,,SI
+orgs_16,Organizaciones sociales / Organizaciones juveniles / Total de beneficiarios al 3,numeric,190,,programas_sociales,sumar,,SI
+orgs_17,Organizaciones sociales / Organizaciones juveniles / Total de beneficiarios al 3,numeric,172,,programas_sociales,sumar,,SI
+orgs_19,Otras organizaciones sociales / Número,numeric,24,,programas_sociales,sumar,,SI
+orgs_20,Otras organizaciones sociales / Total de beneficiarios al 31 de diciembre 2015,numeric,90,,programas_sociales,sumar,,SI
+orgs_21,Otras organizaciones sociales / Total de beneficiarios al 30 de junio 2016,numeric,32,,programas_sociales,sumar,,SI
+ciam_3,Centro Integral de Atención al Adulto Mayor (CIAM) / Total de beneficiarios al,numeric,691,,programas_sociales,sumar,,SI
+omaped_3,Oficina Municipal de Atención a la Persona con Discapacidad (OMAPED) / Total de,numeric,681,,programas_sociales,sumar,,SI
+bvleche_4,Beneficiarios del Programa del Vaso de Leche / Niñas y niños de 0 a 6 años /,numeric,2168,,programas_sociales,sumar,,SI
+bvleche_5,Beneficiarios del Programa del Vaso de Leche / Niñas y niños de 0 a 6 años /,numeric,1709,,programas_sociales,sumar,,SI
+bvleche_7,Beneficiarios del Programa del Vaso de Leche / Niñas y niños de 7 a 13 años /,numeric,798,,programas_sociales,sumar,,SI
+bvleche_10,Beneficiarios del Programa del Vaso de Leche / Madres gestantes / Número de ben,numeric,340,,programas_sociales,sumar,,SI
+bvleche_13,Beneficiarios del Programa del Vaso de Leche / Madres en período de lactancia /,numeric,470,,programas_sociales,sumar,,SI
+bvleche_16,Beneficiarios del Programa del Vaso de Leche / Personas afectadas con tuberculos,numeric,143,,programas_sociales,sumar,,SI
+bvleche_19,Beneficiarios del Programa del Vaso de Leche / Adulto Mayor / Número de benefic,numeric,671,,programas_sociales,sumar,,SI
+bvleche_22,Beneficiarios del Programa del Vaso de Leche / Personas con alguna discapacidad,numeric,299,,programas_sociales,sumar,,SI
+bvleche_25,Beneficiarios del Programa del Vaso de Leche / Otros casos sociales / Número de,numeric,123,,programas_sociales,sumar,,SI
+bvleche_1,Beneficiarios del Programa del Vaso de Leche / Total de beneficiarios / Número,numeric,2404,,programas_sociales,sumar,,SI
+financproy_2,Número de proyectos  / Agua y saneamiento,numeric,22,,,,,SI
+financproy_4,Número de proyectos  / Electrificación,numeric,9,,,,,SI
+financproy_6,Número de proyectos / Hospital,numeric,4,,,,,SI
+financproy_8,Número de proyectos / Centro de salud,numeric,7,,,,,SI
+financproy_10,Número de proyectos / Puesto de salud,numeric,8,,,,,SI
+financproy_12,Número de proyectos / Aulas escolares,numeric,17,,,,,SI
+financproy_14,Número de proyectos / Infraestructura vial,numeric,23,,,,,SI
+financproy_16,Número de proyectos / Sistemas de riego,numeric,10,,,,,SI
+financproy_18,Número de proyectos / Otro,numeric,12,,,,,SI
+serpers_7,Efectivos de serenazgo al 30 de junio 2016 / Total,numeric,271,,seguridad_ciudadana,sumar,,SI
+serinterv_3,Número de intervenciones registradas por el serenazgo / Robo a transeúntes,numeric,314,,seguridad_ciudadana,sumar,,SI
+serinterv_5,Número de intervenciones registradas por el serenazgo / Robo a domicilio,numeric,160,,seguridad_ciudadana,sumar,,SI
+serinterv_7,Número de intervenciones registradas por el serenazgo / Robo de vehículos,numeric,128,,seguridad_ciudadana,sumar,,SI
+serinterv_9,Número de intervenciones registradas por el serenazgo / Robo de autopartes,numeric,113,,seguridad_ciudadana,sumar,,SI
+serinterv_11,Número de intervenciones registradas por el serenazgo / Robo a establecimientos,numeric,117,,seguridad_ciudadana,sumar,,SI
+serinterv_13,Número de intervenciones registradas por el serenazgo / Consumo de alcohol en v,numeric,533,,seguridad_ciudadana,sumar,,SI
+serinterv_15,Número de intervenciones registradas por el serenazgo / Consumo de drogas,numeric,327,,seguridad_ciudadana,sumar,,SI
+serinterv_17,Número de intervenciones registradas por el serenazgo / Accidentes de tránsito,numeric,369,,seguridad_ciudadana,sumar,,SI
+serinterv_19,Número de intervenciones registradas por el serenazgo / Comercio Informal,numeric,317,,seguridad_ciudadana,sumar,,SI
+serinterv_25,Número de intervenciones registradas por el serenazgo / Otro,numeric,166,,seguridad_ciudadana,sumar,,SI
+csegactiv_3,Número de Sesiones de Comité de Seguridad Ciudadana,numeric,38,,,,,SI
+servspriv_info,La municipalidad informó sobre establecimientos de servicios y comercio en funci,haven_labelled,1,No informó = 0; Informó = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+denunciasamb_inf,Municipalidad informó sobre registro de denuncias ambientales,haven_labelled,1,No informó = 0; Informó = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+denunciasamb_3,Número de denuncias recepcionadas / Contaminación del agua,numeric,38,,,,,SI
+denunciasamb_4,Número de denuncias atendidas / Contaminación del agua,numeric,37,,,,,SI
+denunciasamb_6,Número de denuncias recepcionadas / Contaminación del suelo,numeric,45,,,,,SI
+denunciasamb_7,Número de denuncias atendidas / Contaminación del suelo,numeric,42,,,,,SI
+denunciasamb_9,Número de denuncias recepcionadas / Contaminación del aire,numeric,48,,,,,SI
+denunciasamb_10,Número de denuncias atendidas / Contaminación del aire,numeric,45,,,,,SI
+denunciasamb_12,Número de denuncias recepcionadas /  Deforestación y quema de bosques,numeric,19,,,,,SI
+denunciasamb_13,Número de denuncias atendidas /  Deforestación y quema de bosques,numeric,19,,,,,SI
+denunciasamb_15,Número de denuncias recepcionadas /  Contaminación sonora,numeric,66,,,,,SI
+denunciasamb_16,Número de denuncias atendidas /   Contaminación sonora,numeric,63,,,,,SI
+denunciasamb_17,¿La municipalidad registró otro tipo de denuncias ambientales?,haven_labelled,2,Si = 1; No = 2,,,,SI
+participacion_inf,Municipalidad informante sobre participación de la población en la gestión admin,haven_labelled,2,No informó = 0; Informó = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+bibliopers_15,,numeric,26,,,,,SI
+serinterv_21,,numeric,328,,seguridad_ciudadana,sumar,,SI
+serinterv_23,,numeric,146,,seguridad_ciudadana,sumar,,SI
+residfrec_2,RECODE of P45_1 (Frecuencia de recojo de residuos sólidos (basura) que realiza l,haven_labelled,5,diaria = 1; interdiaria = 2; dos veces por semana = 3; una vez por semana = 4; no recogio = 5,,,,SI
+limpgast_inf,RECODE of VFI_P50 (Municipalidad),haven_labelled,2,no informo = 0; si informo = 1,servicios_limpieza,ninguna,"Variable de control de información, excluir del análisis",NO
+opelimp_inf,RECODE of VFI_P52 (Municipalidad),haven_labelled,2,no informo = 0; si informo = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+regamb_inf,RECODE of VFI_P53 (Municipalidad),haven_labelled,1,no informo = 0; si informo = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+regamb_1,RECODE of P53 (¿La municipalidad registró vendedores ambulantes?),haven_labelled,2,no registro = 0; si registro = 1,,,,SI
+internet_1,RECODE of P56 (¿La municipalidad brindó servicios de cabinas de Internet?),haven_labelled,2,no brindo = 0; si brindo = 1,,,,SI
+bibliopers_1,RECODE of P60 (¿La municipalidad tiene personal exclusivo de la biblioteca munic,haven_labelled,2,no tiene = 0; si tiene = 1,,,,SI
+infradep_inf,RECODE of VFI_P64 (Municipalidad),haven_labelled,2,no informo = 0; si informo = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+infracul_1,,numeric,2,,,,,SI
+infracul_2,RECODE of P65_1 (¿La municipalidad administró locales para uso recreacional y cu,haven_labelled,2,no administro = 0; si administro = 1,,,,SI
+ciam_1,RECODE of P66A_1 (¿Existe Centro Integral de Atención al Adulto Mayor (CIAM) en,haven_labelled,2,no = 0; si = 1,programas_sociales,sumar,,SI
+omaped_1,,numeric,2,,programas_sociales,sumar,,SI
+demuna_inf,RECODE of VFI_P68 (Municipalidad),haven_labelled,2,no informo = 0; si informo = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+demuna_1,RECODE of P68 (¿La municipalidad brindó el servicio de Defensoría Municipal del,haven_labelled,2,no brindo = 0; si brindo = 1,,,,SI
+financinst_inf,RECODE of VFI_P69 (Municipalidad),haven_labelled,1,no informo = 0; si informo = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+financinst_2,RECODE of P69_1_1 (Organismos o instituciones / Obras de infraestructura / Públi,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_3,RECODE of P69_2_1 (Organismos o instituciones / Obras de infraestructura / Públi,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_4,RECODE of P69_3_1 (Organismos o instituciones / Obras de infraestructura / Públi,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_5,RECODE of P69_4_1 (Organismos o instituciones / Obras de infraestructura / Públi,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_6,RECODE of P69_5_1 (Organismos o instituciones / Obras de infraestructura / Públi,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_7,RECODE of P69_6_1 (Organismos o instituciones / Obras de infraestructura / Públi,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_8,RECODE of P69_7_1 (Organismos o instituciones / Obras de infraestructura / Públi,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_9,RECODE of P69_8_1 (Organismos o instituciones / Obras de infraestructura / Públi,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_10,RECODE of P69_9_1 (Organismos o instituciones / Obras de infraestructura / Públi,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_12,RECODE of P69_11_1 (Organismos o instituciones / Obras de infraestructura / Priv,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_13,RECODE of P69_12_1 (Organismos o instituciones / Obras de infraestructura / Priv,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_14,RECODE of P69_13_1 (Organismos o instituciones / Obras de infraestructura / Priv,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_15,RECODE of P69_14_1 (Organismos o instituciones / Obras de infraestructura / Priv,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_16,RECODE of P69_15_1 (Organismos o instituciones / Obras de infraestructura / Priv,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_17,RECODE of P69_16_1 (Organismos o instituciones / Obras de infraestructura / Priv,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_19,RECODE of P69_1_2 (Organismos o instituciones / Programas sociales / Público / M,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_20,RECODE of P69_2_2 (Organismos o instituciones / Programas Sociales / Público / M,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_21,RECODE of P69_3_2 (Organismos o instituciones / Programas Sociales/ Público / Mi,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_22,RECODE of P69_4_2 (Organismos o instituciones / Programas Sociales / Público / M,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_23,RECODE of P69_5_2 (Organismos o instituciones / Programas Sociales / Público / M,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_24,RECODE of P69_6_2 (Organismos o instituciones / Programas Sociales / Público / M,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_25,RECODE of P69_7_2 (Organismos o instituciones / Programas Sociales / Público / G,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_26,RECODE of P69_8_2 (Organismos o instituciones / Programas Sociales / Público / G,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_27,RECODE of P69_10_1 (Organismos o instituciones / Programas Sociales / Público /,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_29,RECODE of P69_11_2 (Organismos o instituciones / Programas Sociales / Privado /,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_30,RECODE of P69_12_2 (Organismos o instituciones / Programas Sociales / Privado /,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_31,RECODE of P69_13_2 (Organismos o instituciones / Programas Sociales / Privado /,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_32,RECODE of P69_14_2 (Organismos o instituciones / Programas Sociales / Privado /,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_33,RECODE of P69_15_2 (Organismos o instituciones / Programas Sociales / Privado /,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financinst_34,RECODE of P69_17_1 (Organismos o instituciones / Programas Sociales / Privado /,haven_labelled,2,no realiza = 0; si realiza = 1,,,,SI
+financproy_inf,RECODE of VFI_P70 (Municipalidad),haven_labelled,2,no informo = 0; si informo = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+financproy_1,RECODE of P70_1 (¿La municipalidad ha recibido transferencia de proyectos de inf,haven_labelled,2,no = 0; si = 1,,,,SI
+financproy_3,RECODE of P70_2 (¿La municipalidad ha recibido transferencia de proyectos de inf,haven_labelled,2,no = 0; si = 1,,,,SI
+financproy_5,RECODE of P70_3 (¿La municipalidad ha recibido transferencia de proyectos de inf,haven_labelled,2,no = 0; si = 1,,,,SI
+financproy_7,RECODE of P70_4 (¿La municipalidad ha recibido transferencia de proyectos de inf,haven_labelled,2,no = 0; si = 1,,,,SI
+financproy_9,RECODE of P70_5 (¿La municipalidad ha recibido transferencia de proyectos de inf,haven_labelled,2,no = 0; si = 1,,,,SI
+financproy_11,RECODE of P70_6 (¿La municipalidad ha recibido transferencia de proyectos de inf,haven_labelled,2,no = 0; si = 1,,,,SI
+financproy_13,RECODE of P70_7 (¿La municipalidad ha recibido transferencia de proyectos de inf,haven_labelled,2,no = 0; si = 1,,,,SI
+financproy_15,RECODE of P70_8 (¿La municipalidad ha recibido transferencia de proyectos de inf,haven_labelled,2,no = 0; si = 1,,,,SI
+financproy_17,RECODE of P70_9 (¿La municipalidad ha recibido transferencia de proyectos de inf,haven_labelled,2,no = 0; si = 1,,,,SI
+estsalud_inf,RECODE of VFI_P71 (Municipalidad),haven_labelled,2,no informo = 0; si informo = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+serinterv_inf,RECODE of VFI_P75 (Municipalidad),haven_labelled,2,no informo = 0; si informo = 1,seguridad_ciudadana,ninguna,"Variable de control de información, excluir del análisis",NO
+serinterv_1,,numeric,2,,seguridad_ciudadana,sumar,,SI
+serinterv_2,RECODE of P75_1 (¿El serenazgo registró intervenciones por / Robo a transeúntes?,haven_labelled,2,no registra = 0; si registra = 1,seguridad_ciudadana,sumar,,SI
+serinterv_4,RECODE of P75_2 (¿El serenazgo registró intervenciones por / Robo a domicilio?),haven_labelled,2,no registra = 0; si registra = 1,seguridad_ciudadana,sumar,,SI
+serinterv_6,RECODE of P75_3 (¿El serenazgo registró intervenciones por / Robo de vehículos?),haven_labelled,2,no registra = 0; si registra = 1,seguridad_ciudadana,sumar,,SI
+serinterv_8,RECODE of P75_4 (¿El serenazgo registró intervenciones por / Robo de autopartes?,haven_labelled,2,no registra = 0; si registra = 1,seguridad_ciudadana,sumar,,SI
+serinterv_10,RECODE of P75_5 (¿El serenazgo registró intervenciones por / Robo a establecimie,haven_labelled,2,no registra = 0; si registra = 1,seguridad_ciudadana,sumar,,SI
+serinterv_12,RECODE of P75_6 (¿El serenazgo registró intervenciones por / Consumo de alcohol,haven_labelled,2,no registra = 0; si registra = 1,seguridad_ciudadana,sumar,,SI
+serinterv_14,RECODE of P75_7 (¿El serenazgo registró intervenciones por / Consumo de drogas?),haven_labelled,2,no registra = 0; si registra = 1,seguridad_ciudadana,sumar,,SI
+serinterv_16,RECODE of P75_8 (¿El serenazgo registró intervenciones por / Accidentes de tráns,haven_labelled,2,no registra = 0; si registra = 1,seguridad_ciudadana,sumar,,SI
+serinterv_18,RECODE of P75_9 (¿El serenazgo registró intervenciones por / Comercio Informal?),haven_labelled,2,no registra = 0; si registra = 1,seguridad_ciudadana,sumar,,SI
+serinterv_20,,numeric,2,,seguridad_ciudadana,sumar,,SI
+serinterv_22,,numeric,2,,seguridad_ciudadana,sumar,,SI
+serinterv_24,RECODE of P75_10 (¿El serenazgo registró intervenciones por / Otro?),haven_labelled,2,no registra = 0; si registra = 1,seguridad_ciudadana,sumar,,SI
+patrullfrec_1,,numeric,5,,,,,SI
+csegconf_1,RECODE of P80 (¿La Municipalidad conformó el Comité Provincial / Distrital de Se,haven_labelled,2,no conformo = 0; si conformo = 1,,,,SI
+orgseg_1,RECODE of P84_1 (¿La municipalidad registró organizaciones de seguridad vecinal,haven_labelled,2,no = 0; si = 1,,,,SI
+griesgosgr_1,RECODE of P86 (¿La municipalidad tiene constituido el grupo de trabajo de la Ges,haven_labelled,2,no = 0; si = 1,,,,SI
+bdefensa_1,RECODE of P89 (¿La municipalidad tiene brigadas de Defensa Civil?),haven_labelled,2,no tiene = 0; si tiene = 1,,,,SI
+coel_1,RECODE of P90 (¿La municipalidad ha conformado el Centro de Operaciones de Emerg,haven_labelled,2,no ha conformado = 0; si ha conformado = 1,,,,SI
+almacen_inf,RECODE of VFI_P92 (Municipalidad),haven_labelled,2,no informo = 0; si informo = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+almacen_1,RECODE of P92 (¿La Municipalidad tiene almacén local de bienes de ayuda humanita,haven_labelled,2,no tiene = 0; si tiene = 1,,,,SI
+odefensa_1,RECODE of P93 (¿La municipalidad tiene Oficina de Defensa Civil?),haven_labelled,2,no tiene = 0; si tiene = 1,,,,SI
+odefensa_no,,numeric,2,,,,,SI
+invpp_1,,numeric,2,,,,,SI
+invpp_2,,numeric,2,,,,,SI
+invpp_3,,numeric,2,,,,,SI
+invpp_4,,numeric,2,,,,,SI
+invpp_5,,numeric,2,,,,,SI
+fenom_2,RECODE of P95_1 (Fenómenos naturales registrados / Sismos),haven_labelled,2,no = 0; si = 1,,,,SI
+fenom_3,RECODE of P95_2 (Fenómenos naturales registrados / Aluviones),haven_labelled,2,no = 0; si = 1,,,,SI
+fenom_4,RECODE of P95_3 (Fenómenos naturales registrados / Deslizamientos de tierra),haven_labelled,2,no = 0; si = 1,,,,SI
+fenom_5,RECODE of P95_4 (Fenómenos naturales registrados / Derrumbes de cerros),haven_labelled,2,no = 0; si = 1,,,,SI
+fenom_6,RECODE of P95_5 (Fenómenos naturales registrados / Huaycos),haven_labelled,2,no = 0; si = 1,,,,SI
+fenom_7,RECODE of P95_6 (Fenómenos naturales registrados / Granizadas),haven_labelled,2,no = 0; si = 1,,,,SI
+fenom_9,RECODE of P95_7 (Fenómenos naturales registrados / Heladas),haven_labelled,2,no = 0; si = 1,,,,SI
+fenom_10,RECODE of P95_8 (Fenómenos naturales registrados / Nevadas),haven_labelled,2,no = 0; si = 1,,,,SI
+fenom_11,RECODE of P95_9 (Fenómenos naturales registrados / Lluvias intensas),haven_labelled,2,no = 0; si = 1,,,,SI
+fenom_12,RECODE of P95_10 (Fenómenos naturales registrados / Tormentas eléctricas),haven_labelled,2,no = 0; si = 1,,,,SI
+fenom_13,RECODE of P95_11 (Fenómenos naturales registrados / Inundaciones),haven_labelled,2,no = 0; si = 1,,,,SI
+fenom_14,RECODE of P95_12 (Fenómenos naturales registrados / Sequías),haven_labelled,2,no = 0; si = 1,,,,SI
+fenom_15,RECODE of P95_13 (Fenómenos naturales registrados / Vientos fuertes),haven_labelled,2,no = 0; si = 1,,,,SI
+fenom_16,RECODE of P95_14 (Fenómenos naturales registrados / Incendios forestales),haven_labelled,2,no = 0; si = 1,,,,SI
+fenom_17,RECODE of P95_15 (Fenómenos naturales registrados / Incendios urbanos),haven_labelled,2,no = 0; si = 1,,,,SI
+empinc_info,RECODE of VFI_P97 (Municipalidad),haven_labelled,2,no informo = 0; si informo = 1,,,,SI
+empinc_2,RECODE of P97_1 (Acciones realizadas / Promoción y publicidad),haven_labelled,2,no = 0; si = 1,,,,SI
+empinc_3,RECODE of P97_2 (Acciones realizadas / Ferias y concursos),haven_labelled,2,no = 0; si = 1,,,,SI
+empinc_4,RECODE of P97_3 (Acciones realizadas / Convenios con Organización No Gubernament,haven_labelled,2,no = 0; si = 1,,,,SI
+empinc_5,RECODE of P97_4 (Acciones realizadas / Capacitación para mejorar la producción y,haven_labelled,2,no = 0; si = 1,,,,SI
+empinc_6,RECODE of P97_5 (Acciones realizadas / Simplificación de trámite para licencia d,haven_labelled,2,no = 0; si = 1,,,,SI
+empinc_7,RECODE of P97_6 (Acciones realizadas / Educación financiera orientada a la inver,haven_labelled,2,no = 0; si = 1,,,,SI
+empinc_8,Acciones realizadas / Otra acción,haven_labelled,2,. = 1,,,,SI
+oficinaamb_1,RECODE of P105 (¿La municipalidad tiene Oficina o Unidad Ambiental?),haven_labelled,2,tiene = 1; no tiene = 2,,,,SI
+denunciasamb_2,¿La municipalidad registró denuncias ambientales por contaminación del agua?,haven_labelled,2,No = 0; Sí = 1,,,,SI
+denunciasamb_5,¿La municipalidad registró denuncias ambientales por contaminación del suelo?,haven_labelled,2,No = 0; Sí = 1,,,,SI
+denunciasamb_8,¿La municipalidad registró denuncias ambientales por contaminación del aire?,haven_labelled,2,No = 0; Sí = 1,,,,SI
+denunciasamb_11,¿La municipalidad registró denuncias ambientales por deforestación y quema de,haven_labelled,2,No = 0; Sí = 1,,,,SI
+denunciasamb_14,¿La municipalidad registró denuncias ambientales por contaminación sonora?,haven_labelled,2,No = 0; Sí = 1,,,,SI
+denunciasamb_18,Número de denuncias recepcionadas /Otro,haven_labelled,2,Cero = 0,,,,SI
+denunciasamb_19, Número de denuncias atendidas / Otro,haven_labelled,2,Cero = 0,,,,SI
+participacion_2, Tipo de participación de la población en la gestión administrativa / Formulando,haven_labelled,2,No = 0; Sí = 1,,,,SI
+participacion_3, Tipo de participación de la población en la gestión administrativa / Concertand,haven_labelled,2,No = 0; Sí = 2,,,,SI
+participacion_4, Tipo de participación de la población en la gestión administrativa / Concertand,haven_labelled,2,No = 0; Sí = 3,,,,SI
+participacion_5, Tipo de participación de la población en la gestión administrativa / En el pres,haven_labelled,2,No = 0; Sí = 4,,,,SI
+participacion_6, Tipo de participación de la población en la gestión administrativa / En cabildo,haven_labelled,2,No = 0; Sí = 5,,,,SI
+participacion_7, Tipo de participación de la población en la gestión administrativa / En audienc,haven_labelled,2,No = 0; Sí = 6,,,,SI
+participacion_8, Tipo de participación de la población en la gestión administrativa / En accione,haven_labelled,2,No = 0; Sí = 7,,,,SI
+participacion_9, Tipo de participación de la población en la gestión administrativa / En comites,haven_labelled,2,No = 0; Sí = 8,,,,SI
+participacion_10, Tipo de participación de la población en la gestión administrativa / En comité,haven_labelled,2,No = 0; Sí = 9,,,,SI
+participacion_11, Tipo de participación de la población en la gestión administrativa / En juntas,haven_labelled,2,No = 0; Sí = 10,,,,SI
+participacion_12, Tipo de participación de la población en la gestión administrativa / Otro,haven_labelled,2,No = 0; Sí = 11,,,,SI
+delegados_1, ¿La municipalidad tiene constituida la Junta de Delegados Vecinales?,haven_labelled,2,Sí = 1; No = 2,,,,SI
+ins_muni,¿Municipalidad informó?,haven_labelled,1,No = 0; Sí = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+ins_muni_1,¿El municipio informó que existen instalaciones de servicios de comunicación?,haven_labelled,2,No existe = 0; Existe = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+ins_muni_3,Número de instalaciones de centros comunitarios telefónicos,numeric,55,,,,,SI
+ins_muni_5,Número de instalaciones de servicios de comunicación/Locutorios telefónicos,numeric,57,,,,,SI
+ins_muni_7,Número de instalaciones de servicios de comunicación / Mensajerías / Courier,numeric,24,,,,,SI
+ins_muni_9,Número de instalaciones de Cabinas públicas de internet,numeric,106,,,,,SI
+ins_muni_11,Número de instalaciones de Antenas parabólicas con servicios de internet,numeric,27,,,,,SI
+ins_muni_13,Número de instalaciones de Antenas parabólicas con servicios de voz,numeric,27,,,,,SI
+ins_muni_15,Número de instalaciones de servicio de comunicación / Otros,numeric,10,,,,,SI
+alum_muni,¿Municipalidad informó?,haven_labelled,1,No = 0; Sí = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+alum_muni_1,¿La municipalidad informó que existe cobertura de alumbrado público?,haven_labelled,2,No existe = 0; Existe = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+redpot_muni,¿Municipalidad informó?,haven_labelled,1,No = 0; Sí = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+redpot_muni_1,¿La municipalidad informó que existe cobertura de la red de agua potable?,haven_labelled,2,No existe = 0; Existe = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+enti_muni,¿Municipalidad informó?,haven_labelled,1,No = 0; Sí = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+enti_muni_1,¿Las entidades se encargan de la operación de servicios de agua potable?,haven_labelled,2,No se encargan = 0; Se encargan = 1,,,,SI
+enti_muni_3,Entidades u organizaciones/empresa prestadora privada,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+enti_muni_4,Entidades u organizaciones/Junta Administradora de Servicios de Saneamiento,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+enti_muni_5,Entidades u organizaciones/comité de agua,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+enti_muni_6,Entidades u organizaciones/otra entidad u organización,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+enti_muni_7,Entidades u organizaciones/otra entidad u organización/especifique,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+orga_muni,¿Municipalidad informó?,haven_labelled,1,No = 0; Sí = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+orga_muni_1,¿La municipalidad supervisa organizaciones comunitarias de servicios de agua?,haven_labelled,2,No supervisa = 0; Supervisa = 1,,,,SI
+orga_muni_2,Organizaciones comunitarias/Junta Administradora de Servicios de Saneamiento,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+orga_muni_3,Organizaciones comunitarias/asociación de usuarios,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+orga_muni_4,Organizaciones comunitarias/comité de agua,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+orga_muni_5,Organizaciones comunitarias/otro,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+actv_muni,¿Municipalidad informó?,haven_labelled,1,No = 0; Sí = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+actv_muni_1,¿La municipalidad apoya a las organizaciones comunitarias de servicio de agua?,haven_labelled,2,No realizó = 0; Realizó = 1,,,,SI
+actv_muni_2,Actividades que realiza la municipalidad/brindar asistencia técnica,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+actv_muni_3,Actividades que realiza la municipalidad/brindar capacitación,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+actv_muni_4,Actividades que realiza la municipalidad/realizar mantenimiento del sistema de s,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+actv_muni_5,Actividades de ampliación o rehabilitación de los sistemas de saneamiento,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+actv_muni_6,Actividades que realiza la municipalidad/otra actividad,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+ges_muni,¿Municipalidad informó?,haven_labelled,1,No = 0; Sí = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+ges_muni_1,¿La poblacion participa en la gestión administrativa de la municipalidad?,haven_labelled,2,No = 0; Sí = 1,,,,SI
+ges_muni_2,Participación de la población/formulando el Plan Desarrollo Municipal,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+ges_muni_3,Participación de la población/concertando el presupuesto municipal,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+ges_muni_4,Participación de la población/formulando y controlando planes económicos locales,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+ges_muni_5,Participación de la población/en el presupuesto participativo,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+ges_muni_6,Participación de la población/en cabildo abierto,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+ges_muni_7,Participación de la población/en audiencia públicas para rendición de cuentas,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+ges_muni_8,Participación de la población/en acciones de seguridad en el distrito,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+ges_muni_9,Participación de la población/en comités de gestión alimentaria,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+ges_muni_10,Participación de la población/en comité de ejecución de obras,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+ges_muni_11,Participación de la población/en juntas vecinales(comités vecinales),haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+ges_muni_12,Participación de la población/otra,haven_labelled,1," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+par_muni,¿Municipalidad informó?,haven_labelled,1,No = 0; Sí = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+par_muni_1,¿La municipalidad participa en espaciós de concertación?,haven_labelled,2,No = 0; Sí = 1,,,,SI
+par_muni_2,La municipalidad participa en el Consejo Participativo Local de Educación,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+par_muni_3,La municipalidad participa en el Consejo Local de Salud,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+par_muni_4,"La municipalidad participa en el Consejo Consultivo de Niñas, niños y adolescent",haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+par_muni_5,La municipalidad participa en la mesa de concertación para la lucha contra la po,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+par_muni_6,Espacio de concertación en el  que participa la municipalidad / Otro,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+jun_muni,¿Municipalidad informó?,haven_labelled,1,No = 0; Sí = 1,informacion_no_usar,ninguna,"Variable de control de información, excluir del análisis",NO
+jun_muni_1,¿La municipalidad tiene constituida la Junta de Delegados Vecinales?,haven_labelled,2,No tiene constituída = 0; Tiene constituída = 1,,,,SI
+jun_muni_2,Número de miembros de la Junta de Delegados Vecinales/total,numeric,114,,,,,SI
+jun_muni_3,Número de miembros de la Junta de Delegados Vecinales/mujer,numeric,76,,,,,SI
+jun_muni_4,Número de miembros de la Junta de Delegados Vecinales/hombre,numeric,85,,,,,SI
+jun_muni_5,¿La Junta de Delegados Vecinales se encuentra en actividad?,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+ins_muni_2,¿En el distrito existen servicios de Centros comunitarios telefónicos?,haven_labelled,2,No = 0; Sí = 1,,,,SI
+ins_muni_4,¿En el distrito existen servicios de Locutorios telefónicos?,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+ins_muni_6,¿En el distrito existen servicios de Mensajerías / Courier?,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+ins_muni_8,¿En el distrito existen servicios de Cabinas públicas de internet?,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+ins_muni_10,¿En el distrito existen Antenas parabólicas con servicios  de internet?,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+ins_muni_12,¿En el distrito existen antenas parabólicas con servicios de voz,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+ins_muni_14,¿En el distrito existen otros servicios de comunicación?,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+alum_muni_2,Cobertura del servicio de alumbrado público/Capital del distrito,haven_labelled,5,Menos del 25% = 1; De 25% a 49% = 2; De 50% a 74% = 3; De 75% a 100% = 4; No existe alumbrado público = 5,,,,SI
+alum_muni_3,Cobertura del servicio de alumbrado público/fuera de la capital distrital,haven_labelled,5,Menos del 25% = 1; De 25% a 49% = 2; De 50% a 74% = 3; De 75% a 100% = 4; No existe alumbrado público = 5,,,,SI
+redpot_muni_2,Cobertura de red de agua potable en el distrito/Capital del distrito,haven_labelled,5,Menos del 25% = 1; De 25% a 49% = 2; De 50% a 74% = 3; De 75% a 100% = 4; No existe red de agua potable = 5,,,,SI
+redpot_muni_3,Cobertura de red de agua potable en el distrito/Fuera de la capital distrital,haven_labelled,5,Menos del 25% = 1; De 25% a 49% = 2; De 50% a 74% = 3; De 75% a 100% = 4; No existe red de agua potable = 5,,,,SI
+enti_muni_2,Entidades u organizaciones/empresa prestadora municipal,haven_labelled,2,No existe = 0; Existe = 1,,,,SI
+orga_muni_7,No supervisa organizaciones comunitarias,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
+actv_muni_8,No realiza actividades,haven_labelled,2," Sí y está actualizado = 1; Sí y esta desactualizado = 2; No tiene, porque está en proceso de implementación = 3; No tiene, porque desconoce cómo implementarlo = 4",,,,SI
