@@ -11,6 +11,8 @@ data.xlsx
 
 # ── Modelos entrenados (archivos grandes) ─────────────────────────────────────
 outputs/models/
+# Los modelos del app sí van al repo (pequeños, necesarios para Streamlit Cloud)
+!streamlit_app/models/
 
 # ── Archivos de versiones anteriores ─────────────────────────────────────────
 archive/

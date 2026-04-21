@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GFP — Brechas de Implementación en Obras Públicas · Perú</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-hero { background: linear-gradient(135deg, #1a3a5c 0%, #2b6cb0 60%, #4299e1 100%); }
+    .card { @apply bg-white rounded-xl shadow-sm border border-gray-100 p-6; }
+    .badge { display:inline-block; padding:3px 12px; border-radius:999px; font-size:0.78rem; font-weight:600; }
+    .tab-btn { cursor:pointer; padding:8px 20px; border-radius:8px; font-weight:500; font-size:0.9rem; transition:all .2s; }
+    .tab-btn.active { background:#2b6cb0; color:#fff; }
+    .tab-btn:not(.active) { background:#f0f4f8; color:#4a5568; }
+    .tab-content { display:none; }
+    .tab-content.active { display:block; }
+    .metric-card { background:linear-gradient(135deg,#ebf4ff,#fff); border:1px solid #bee3f8;
+                   border-radius:12px; padding:20px; text-align:center; }
+    .finding-box { border-left:4px solid #2b6cb0; background:#ebf4ff; padding:14px 18px;
+                   border-radius:0 8px 8px 0; margin:10px 0; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- NAV -->
+<nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+  <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+    <span class="font-bold text-blue-800 text-lg">🏗️ GFP</span>
+    <div class="flex gap-4 text-sm font-medium text-gray-600">
+      <a href="#resultados" class="hover:text-blue-700">Resultados</a>
+      <a href="#hallazgos"  class="hover:text-blue-700">Hallazgos</a>
+      <a href="#visualizaciones" class="hover:text-blue-700">Visualizaciones</a>
+      <a href="#metodologia" class="hover:text-blue-700">Metodología</a>
+    </div>
+    <a href="https://gfp-brechas.streamlit.app" target="_blank"
+       class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition">
+      Demo →
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="gradient-hero text-white py-20 px-4">
+  <div class="max-w-3xl mx-auto text-center">
+    <span class="badge bg-blue-400 bg-opacity-30 text-blue-100 mb-4 inline-block">
+      Infobras · MEF Perú · 2018–2024
+    </span>
+    <h1 class="text-4xl font-extrabold leading-tight mb-4">
+      Predicting Implementation Gaps<br/>in Public Infrastructure
+    </h1>
+    <p class="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+      Pipeline de machine learning para predecir si una obra pública peruana
+      terminará después de su fecha programada —
+      e identificar los factores que explican ese retraso.
+    </p>
+    <div class="flex flex-wrap gap-3 justify-center">
+      <a href="https://gfp-brechas.streamlit.app" target="_blank"
+         class="bg-white text-blue-700 font-bold px-6 py-3 rounded-xl hover:bg-blue-50 transition text-sm shadow">
+        🔍 Probar el Predictor
+      </a>
+      <a href="https://github.com/LuisEduardoValverdeRamos/public_infrastructure_gaps"
+         target="_blank"
+         class="bg-blue-500 bg-opacity-40 border border-blue-300 text-white font-semibold px-6 py-3 rounded-xl hover:bg-opacity-60 transition text-sm">
+        Ver código en GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<section class="bg-white border-b border-gray-100 py-6 px-4">
+  <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+    <div>
+      <div class="text-2xl font-extrabold text-blue-700">40,243</div>
+      <div class="text-xs text-gray-500 mt-1">obras analizadas</div>
+    </div>
+    <div>
+      <div class="text-2xl font-extrabold text-blue-700">3</div>
+      <div class="text-xs text-gray-500 mt-1">modelos (modalidades)</div>
+    </div>
+    <div>
+      <div class="text-2xl font-extrabold text-blue-700">0.872</div>
+      <div class="text-xs text-gray-500 mt-1">AUC-ROC (mejor modelo)</div>
+    </div>
+    <div>
+      <div class="text-2xl font-extrabold text-blue-700">~55%</div>
+      <div class="text-xs text-gray-500 mt-1">obras con retraso</div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<section id="resultados" class="max-w-5xl mx-auto px-4 py-14">
+  <h2 class="text-2xl font-bold text-gray-800 mb-2">Resultados del modelo</h2>
+  <p class="text-gray-500 mb-8 text-sm">Métricas sobre el conjunto de test (20% de las observaciones) para el mejor XGBoost por modalidad.</p>
+
+  <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+    <table class="w-full text-sm">
+      <thead class="bg-blue-50 text-blue-800 font-semibold">
+        <tr>
+          <th class="px-5 py-3 text-left">Modalidad</th>
+          <th class="px-5 py-3 text-left">Sampling</th>
+          <th class="px-4 py-3 text-right">N</th>
+          <th class="px-4 py-3 text-right">Brecha %</th>
+          <th class="px-4 py-3 text-right">AUC-ROC</th>
+          <th class="px-4 py-3 text-right">F1 Score</th>
+          <th class="px-4 py-3 text-right">Accuracy</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-100">
+        <tr class="hover:bg-gray-50">
+          <td class="px-5 py-3 font-medium">
+            <span class="badge bg-blue-100 text-blue-700">Contrata</span>
+          </td>
+          <td class="px-5 py-3 text-gray-500">NRS</td>
+          <td class="px-4 py-3 text-right">20,593</td>
+          <td class="px-4 py-3 text-right">53.5%</td>
+          <td class="px-4 py-3 text-right font-semibold text-blue-700">0.872</td>
+          <td class="px-4 py-3 text-right font-semibold">0.799</td>
+          <td class="px-4 py-3 text-right">79.9%</td>
+        </tr>
+        <tr class="hover:bg-gray-50">
+          <td class="px-5 py-3 font-medium">
+            <span class="badge bg-green-100 text-green-700">Admin. Directa</span>
+          </td>
+          <td class="px-5 py-3 text-gray-500">Original</td>
+          <td class="px-4 py-3 text-right">17,111</td>
+          <td class="px-4 py-3 text-right">60.6%</td>
+          <td class="px-4 py-3 text-right font-semibold text-blue-700">0.845</td>
+          <td class="px-4 py-3 text-right font-semibold">0.754</td>
+          <td class="px-4 py-3 text-right">76.2%</td>
+        </tr>
+        <tr class="hover:bg-gray-50">
+          <td class="px-5 py-3 font-medium">
+            <span class="badge bg-orange-100 text-orange-700">ARCC</span>
+          </td>
+          <td class="px-5 py-3 text-gray-500">Original</td>
+          <td class="px-4 py-3 text-right">2,539</td>
+          <td class="px-4 py-3 text-right">57.8%</td>
+          <td class="px-4 py-3 text-right font-semibold text-blue-700">0.821</td>
+          <td class="px-4 py-3 text-right font-semibold">0.736</td>
+          <td class="px-4 py-3 text-right">74.0%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Logit metrics -->
+  <h3 class="text-lg font-semibold text-gray-700 mt-10 mb-4">Regresión Logit (Top-10 features SHAP)</h3>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="metric-card">
+      <div class="text-xs font-semibold text-blue-500 uppercase tracking-wide mb-1">Contrata</div>
+      <div class="text-2xl font-bold text-blue-800">AUC 0.852</div>
+      <div class="text-sm text-gray-500 mt-1">McFadden R² = 0.325</div>
+    </div>
+    <div class="metric-card">
+      <div class="text-xs font-semibold text-green-500 uppercase tracking-wide mb-1">Admin. Directa</div>
+      <div class="text-2xl font-bold text-blue-800">AUC 0.826</div>
+      <div class="text-sm text-gray-500 mt-1">McFadden R² = 0.260</div>
+    </div>
+    <div class="metric-card">
+      <div class="text-xs font-semibold text-orange-500 uppercase tracking-wide mb-1">ARCC</div>
+      <div class="text-2xl font-bold text-blue-800">AUC 0.843</div>
+      <div class="text-sm text-gray-500 mt-1">McFadden R² = 0.307</div>
+    </div>
+  </div>
+</section>
+
+<!-- HALLAZGOS -->
+<section id="hallazgos" class="bg-white py-14 px-4 border-t border-gray-100">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-2xl font-bold text-gray-800 mb-2">Principales hallazgos</h2>
+    <p class="text-gray-500 text-sm mb-8">Efectos marginales promedio (AME) del modelo logit — impacto sobre Pr(brecha = 1).</p>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- Transversales -->
+      <div class="bg-blue-50 rounded-xl p-6 border border-blue-100">
+        <h3 class="font-bold text-blue-800 mb-4">📊 Patrones consistentes (3 modelos)</h3>
+        <div class="space-y-3 text-sm">
+          <div class="finding-box">
+            <strong>n_modificaciones</strong> — predictor más potente en las 3 modalidades.
+            AME: <span class="text-red-600 font-bold">+44–45 pp</span> por modificación adicional.
+          </div>
+          <div class="finding-box">
+            <strong>n_adicionales_obra</strong> — adicionales de obra aumentan la probabilidad.
+            AME: <span class="text-red-600 font-bold">+3–6 pp</span>.
+          </div>
+          <div class="finding-box">
+            <strong>n_informes_control</strong> — más informes de control → más riesgo.
+            AME: <span class="text-red-600 font-bold">+2–8 pp</span>.
+          </div>
+          <div class="finding-box">
+            <strong>log_monto_aprobado</strong> — proyectos de mayor monto tienen más brecha.
+            AME: <span class="text-red-600 font-bold">+3–6 pp</span>.
+          </div>
+        </div>
+      </div>
+
+      <!-- Por modalidad -->
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl p-5 border border-gray-200">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="badge bg-blue-100 text-blue-700">Contrata</span>
+            <span class="text-xs text-gray-400">AME destacados</span>
+          </div>
+          <ul class="text-sm space-y-1 text-gray-700">
+            <li>🔴 <strong>existe_paralizacion</strong>: +26.9 pp (el mayor efecto binario)</li>
+            <li>🔴 <strong>sierra sur / sierra centro-norte</strong>: +4.1–4.4 pp</li>
+            <li>🔴 <strong>marca_reconstruccion</strong>: +3.4 pp</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-200">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="badge bg-green-100 text-green-700">Admin. Directa</span>
+          </div>
+          <ul class="text-sm space-y-1 text-gray-700">
+            <li>🔴 <strong>sierra sur</strong>: +7.2 pp</li>
+            <li>🟢 <strong>Transporte Terrestre</strong>: −5.9 pp (reduce riesgo)</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-200">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="badge bg-orange-100 text-orange-700">ARCC</span>
+          </div>
+          <ul class="text-sm space-y-1 text-gray-700">
+            <li>🔴 <strong>Educación/Cultura</strong>: +6.0 pp</li>
+            <li>🟢 <strong>costa norte</strong>: −6.9 pp (reduce riesgo)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISUALIZACIONES -->
+<section id="visualizaciones" class="max-w-5xl mx-auto px-4 py-14">
+  <h2 class="text-2xl font-bold text-gray-800 mb-2">Visualizaciones</h2>
+  <p class="text-gray-500 text-sm mb-6">Selecciona un análisis para explorar los resultados.</p>
+
+  <!-- Tabs -->
+  <div class="flex gap-2 mb-6 flex-wrap" id="viz-tabs">
+    <button class="tab-btn active" onclick="showTab('shap')">SHAP Values</button>
+    <button class="tab-btn" onclick="showTab('ame')">Efectos Marginales</button>
+    <button class="tab-btn" onclick="showTab('roc')">Curvas ROC</button>
+  </div>
+
+  <!-- SHAP Tab -->
+  <div id="tab-shap" class="tab-content active">
+    <p class="text-sm text-gray-500 mb-4">
+      Beeswarm plots: cada punto es una observación. El eje X muestra cuánto
+      empuja esa variable la predicción (positivo = más brecha). El color muestra
+      el valor de la variable (rojo = alto, azul = bajo).
+    </p>
+    <div class="grid md:grid-cols-3 gap-4">
+      <div>
+        <p class="text-xs font-semibold text-blue-600 mb-2 text-center">CONTRATA — XGB NRS</p>
+        <img src="assets/figures/shap_contrata.png" class="rounded-lg border border-gray-200 w-full" />
+      </div>
+      <div>
+        <p class="text-xs font-semibold text-green-600 mb-2 text-center">ADMIN. DIRECTA — XGB O</p>
+        <img src="assets/figures/shap_ad.png" class="rounded-lg border border-gray-200 w-full" />
+      </div>
+      <div>
+        <p class="text-xs font-semibold text-orange-600 mb-2 text-center">ARCC — XGB O</p>
+        <img src="assets/figures/shap_arcc.png" class="rounded-lg border border-gray-200 w-full" />
+      </div>
+    </div>
+  </div>
+
+  <!-- AME Tab -->
+  <div id="tab-ame" class="tab-content">
+    <p class="text-sm text-gray-500 mb-4">
+      Heatmap de efectos marginales promedio del modelo logit.
+      Azul = variable aumenta Pr(brecha). Rojo = reduce. * = p &lt; 0.05.
+    </p>
+    <img src="assets/figures/heatmap_ame.png" class="rounded-xl border border-gray-200 w-full max-w-2xl mx-auto block shadow-sm" />
+    <p class="text-sm text-gray-500 mt-6 mb-4">Variables comunes entre ≥ 2 modalidades:</p>
+    <img src="assets/figures/comparativo_ame.png" class="rounded-xl border border-gray-200 w-full max-w-2xl mx-auto block shadow-sm" />
+  </div>
+
+  <!-- ROC Tab -->
+  <div id="tab-roc" class="tab-content">
+    <p class="text-sm text-gray-500 mb-4">
+      Curvas ROC del modelo XGBoost sobre el conjunto de test.
+    </p>
+    <div class="grid md:grid-cols-3 gap-4">
+      <div>
+        <p class="text-xs font-semibold text-blue-600 mb-2 text-center">CONTRATA (AUC = 0.872)</p>
+        <img src="assets/figures/roc_contrata.jpg" class="rounded-lg border border-gray-200 w-full" />
+      </div>
+      <div>
+        <p class="text-xs font-semibold text-green-600 mb-2 text-center">ADMIN. DIRECTA (AUC = 0.845)</p>
+        <img src="assets/figures/roc_ad.jpg" class="rounded-lg border border-gray-200 w-full" />
+      </div>
+      <div>
+        <p class="text-xs font-semibold text-orange-600 mb-2 text-center">ARCC (AUC = 0.821)</p>
+        <img src="assets/figures/roc_arcc.jpg" class="rounded-lg border border-gray-200 w-full" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METODOLOGÍA -->
+<section id="metodologia" class="bg-gray-800 text-white py-14 px-4">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-2xl font-bold mb-8">Pipeline metodológico</h2>
+    <div class="grid md:grid-cols-4 gap-4 text-center text-sm">
+      <div class="bg-gray-700 rounded-xl p-5">
+        <div class="text-3xl mb-2">🧹</div>
+        <div class="font-bold mb-1">01 · Cleaning</div>
+        <div class="text-gray-300 text-xs">Codificación de variables, imputación, filtro de correlación, construcción de <code>brecha_existente</code></div>
+      </div>
+      <div class="bg-gray-700 rounded-xl p-5">
+        <div class="text-3xl mb-2">🤖</div>
+        <div class="font-bold mb-1">02 · Modeling</div>
+        <div class="text-gray-300 text-xs">6 algoritmos × 4 samplings · Grid search RF y XGBoost · Evaluación en test set</div>
+      </div>
+      <div class="bg-gray-700 rounded-xl p-5">
+        <div class="text-3xl mb-2">🔍</div>
+        <div class="font-bold mb-1">03 · SHAP</div>
+        <div class="text-gray-300 text-xs">TreeExplainer vía pred_contribs · Ranking de importancia · Beeswarm plots</div>
+      </div>
+      <div class="bg-gray-700 rounded-xl p-5">
+        <div class="text-3xl mb-2">📊</div>
+        <div class="font-bold mb-1">04 · Regresión</div>
+        <div class="text-gray-300 text-xs">Logit + LPM · Efectos marginales promedio (AME) · Análisis comparativo</div>
+      </div>
+    </div>
+
+    <div class="mt-8 text-sm text-gray-400 text-center">
+      Datos: <a href="https://www.infobras.gob.pe/" target="_blank" class="text-blue-300 hover:underline">Infobras</a>
+      (MEF Perú) · Universo: Gobiernos Locales 2018–2024 ·
+      <a href="https://github.com/LuisEduardoValverdeRamos/public_infrastructure_gaps"
+         target="_blank" class="text-blue-300 hover:underline">Ver repositorio →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="bg-blue-600 text-white text-center py-12 px-4">
+  <h2 class="text-2xl font-bold mb-2">¿Quieres probar el predictor?</h2>
+  <p class="text-blue-100 mb-6 text-sm">Ingresa las características de una obra y obtén la probabilidad estimada de retraso.</p>
+  <a href="https://gfp-brechas.streamlit.app" target="_blank"
+     class="bg-white text-blue-700 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition text-sm shadow-lg">
+    Abrir predictor →
+  </a>
+</section>
+
+<script>
+function showTab(name) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
